@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lionel Fevre - Engineering Process Leader | Senior-Level Engineering Management</title>
-    <meta name="description" content="Senior-level Engineering Manager specializing in Process Optimization, Digital Transformation, and Design Efficiency. 20+ years experience from Ferrari F1 to Bombardier Aerospace.">
+    <title>Lionel Fèvre - Engineering Process Leader | Director-Level Engineering Management</title>
+    <meta name="description" content="Director-level Engineering Manager specializing in Process Optimization, Digital Transformation, and Design Efficiency. 20+ years experience from Ferrari F1 to Bombardier Aerospace.">
     <meta name="keywords" content="Engineering Director, Process Optimization, Digital Transformation, F1 Engineering, CAD PLM Leadership, Team Management">
     <style>
         * {
@@ -57,7 +57,7 @@
             padding: 0 20px;
         }
 
-        /* Navigation - Mobile First Improvements */
+        /* Navigation */
         .navbar {
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
@@ -74,7 +74,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
-            position: relative;
         }
 
         .logo {
@@ -82,14 +81,12 @@
             font-weight: 700;
             color: var(--electric-blue);
             text-shadow: 0 0 10px var(--electric-blue);
-            z-index: 1001;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 2.5rem;
-            position: relative;
         }
 
         .nav-link {
@@ -123,13 +120,11 @@
             color: var(--electric-blue);
         }
 
-        /* Mobile Navigation - Improved */
+        /* Mobile Navigation */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            z-index: 1002;
-            position: relative;
         }
 
         .hamburger span {
@@ -139,18 +134,6 @@
             margin: 3px 0;
             transition: 0.3s;
             box-shadow: 0 0 5px var(--electric-blue);
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
         }
 
         /* Pages */
@@ -206,14 +189,6 @@
             color: var(--electric-blue);
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
             position: relative;
-            background-image: url('/resources/headshot.jpeg');
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-        }
-
-        .profile-image.fallback {
-            background-image: none;
         }
 
         .profile-image::before {
@@ -387,13 +362,6 @@
             text-align: center;
         }
 
-        .about-profile .profile-image {
-            width: 100%;
-            height: 300px;
-            margin-bottom: 30px;
-            font-size: 6rem;
-        }
-
         .about-text h3 {
             color: var(--electric-blue);
             margin-bottom: 25px;
@@ -483,6 +451,7 @@
             width: 45%;
             position: relative;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .timeline-content:hover {
@@ -542,6 +511,34 @@
             left: 0;
             color: var(--electric-blue);
             font-size: 1.2rem;
+        }
+
+        .expand-btn {
+            background: transparent;
+            border: 1px solid var(--electric-blue);
+            color: var(--electric-blue);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .expand-btn:hover {
+            background: var(--electric-blue);
+            color: var(--text-white);
+        }
+
+        .detailed-achievements {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--electric-blue);
+        }
+
+        .detailed-achievements.expanded {
+            display: block;
         }
 
         /* Skills Page */
@@ -653,8 +650,6 @@
             margin-top: 30px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
-            cursor: pointer;
-            border: none;
         }
 
         .download-cv:hover {
@@ -857,53 +852,7 @@
             padding: 20px 40px 40px;
         }
 
-        /* CAPTCHA Styles */
-        .captcha-container {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid var(--electric-blue);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .captcha-question {
-            color: var(--electric-blue);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .captcha-input {
-            width: 100px;
-            padding: 8px 12px;
-            background: var(--primary-dark);
-            border: 2px solid var(--electric-blue);
-            border-radius: 5px;
-            color: var(--text-white);
-            font-size: 1rem;
-            text-align: center;
-            margin: 0 10px;
-        }
-
-        .captcha-refresh {
-            background: transparent;
-            border: 1px solid var(--electric-blue);
-            color: var(--electric-blue);
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            margin-left: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .captcha-refresh:hover {
-            background: var(--electric-blue);
-            color: var(--text-white);
-        }
-
-        /* Responsive Design - Enhanced Mobile Support */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -912,48 +861,28 @@
             .nav-menu {
                 position: fixed;
                 left: -100%;
-                top: 0;
+                top: 70px;
                 flex-direction: column;
                 background: rgba(26, 26, 26, 0.98);
-                backdrop-filter: blur(15px);
+                backdrop-filter: blur(10px);
                 width: 100%;
-                height: 100vh;
                 text-align: center;
-                transition: left 0.3s ease;
-                padding-top: 120px;
-                gap: 3rem;
-                z-index: 1000;
+                transition: 0.3s;
+                padding: 30px 0;
+                border-top: 1px solid var(--electric-blue);
             }
 
             .nav-menu.active {
                 left: 0;
             }
 
-            .nav-link {
-                font-size: 1.3rem;
-                padding: 10px 0;
-            }
-
             .hero h1 {
                 font-size: 2.5rem;
-            }
-
-            .hero-title {
-                font-size: 1.2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
             }
 
             .profile-container {
                 flex-direction: column;
                 gap: 30px;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
             }
 
             .about-grid {
@@ -1003,47 +932,6 @@
             .modal-body {
                 padding: 15px 30px 30px;
             }
-
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .stat-card {
-                padding: 30px 20px;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 80px 0;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-                font-size: 3rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-container {
-                padding: 0.8rem 0;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-            }
         }
 
         /* Animations */
@@ -1079,27 +967,6 @@
             opacity: 1;
             transform: translateX(0);
         }
-
-        /* Loading Animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loading-spinner {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ffffff;
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
     </style>
 </head>
 <body>
@@ -1107,7 +974,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Lionel Fevre</div>
+                <div class="logo">Lionel Fèvre</div>
                 <ul class="nav-menu">
                     <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
                     <li><a href="#" class="nav-link" data-page="about">About</a></li>
@@ -1129,11 +996,11 @@
         <section class="hero">
             <div class="container">
                 <div class="profile-container">
-                    <div class="profile-image fallback">LF</div>
+                    <div class="profile-image">LF</div>
                     <div class="hero-content">
-                        <h1>Lionel Fevre</h1>
-                        <div class="hero-title">Senior Level Engineering Leader</div>
-                        <p class="hero-subtitle">Specializing in Engineering Processes, Business Efficiency, Technological Innovation & High-Performance Teams</p>
+                        <h1>Lionel Fèvre</h1>
+                        <div class="hero-title">Director-Level Engineering Leader</div>
+                        <p class="hero-subtitle">Specializing in Engineering Processes, Digital Transformation & High-Performance Team Building</p>
                         <div class="cta-buttons">
                             <a href="#" class="cta-button" data-page="about">Discover My Approach</a>
                             <a href="#" class="cta-button secondary" data-page="contact">Let's Connect</a>
@@ -1182,7 +1049,7 @@
 
                 <div class="about-grid">
                     <div class="about-profile slide-in-left">
-                        <div class="profile-image fallback">LF</div>
+                        <div class="profile-image" style="width: 100%; height: 300px; margin-bottom: 30px;">LF</div>
                         <h3>Leadership Philosophy</h3>
                         <p>I believe in empowering teams through systematic process optimization and innovative technology adoption. My approach combines analytical rigor with collaborative leadership to drive sustainable engineering excellence.</p>
                     </div>
@@ -1251,7 +1118,7 @@
 
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-content">
+                        <div class="timeline-content" data-role="ferrari-head">
                             <h3 class="role-title">Head of Design Processes, Tools & Engineering Services</h3>
                             <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
                             <p class="role-description">Leading digital transformation and AI integration across Ferrari F1's design offices, directly impacting race performance through operational excellence and innovation.</p>
@@ -1260,18 +1127,23 @@
                                 <li>Standardized tools and processes across multiple international design offices</li>
                                 <li>Created comprehensive Material Database for Composites, Metals, and Polymers</li>
                                 <li>Led CAD/PLM governance ensuring downstream data compliance and integrity</li>
-                                <li>Implemented frequent data compliance declarations with FIA authorities</li>
-                                <li>Applied Agile management techniques for efficient team prioritization</li>
-                                <li>Optimized budget allocation for hardware, licenses, and supplier developments</li>
-                                <li>Managed external consultants, suppliers, and engineering internship programs</li>
-                                <li>Drove disruptive leadership initiatives promoting innovation beyond industry best practices</li>
                             </ul>
+                            <button class="expand-btn" onclick="toggleDetails('ferrari-head')">View Detailed Impact</button>
+                            <div class="detailed-achievements" id="ferrari-head-details">
+                                <ul class="achievements">
+                                    <li>Implemented frequent data compliance declarations with FIA authorities</li>
+                                    <li>Applied Agile management techniques for efficient team prioritization</li>
+                                    <li>Optimized budget allocation for hardware, licenses, and supplier developments</li>
+                                    <li>Managed external consultants, suppliers, and engineering internship programs</li>
+                                    <li>Drove disruptive leadership initiatives promoting innovation beyond industry best practices</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="timeline-date">Sep 2023 - Present</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-content">
+                        <div class="timeline-content" data-role="ferrari-responsible">
                             <h3 class="role-title">Responsible for Design Tools and Methodologies</h3>
                             <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
                             <p class="role-description">Managed cross-functional team driving Design Efficiency Improvement Program and CAD/PLM tool optimization for competitive advantage.</p>
@@ -1279,17 +1151,22 @@
                                 <li>Led team of 4 engineers in Design Efficiency Improvement Program</li>
                                 <li>Developed and optimized CAD & PLM tools for enhanced productivity</li>
                                 <li>Built comprehensive self-learning training materials and assessment programs</li>
-                                <li>Published and maintained Engineering Standards across the organization</li>
-                                <li>Authored technical documentation and methodologies</li>
-                                <li>Implemented knowledge assessment systems for continuous improvement</li>
-                                <li>Established standardized workflows reducing design cycle time by 25%</li>
                             </ul>
+                            <button class="expand-btn" onclick="toggleDetails('ferrari-responsible')">View Detailed Impact</button>
+                            <div class="detailed-achievements" id="ferrari-responsible-details">
+                                <ul class="achievements">
+                                    <li>Published and maintained Engineering Standards across the organization</li>
+                                    <li>Authored technical documentation and methodologies</li>
+                                    <li>Implemented knowledge assessment systems for continuous improvement</li>
+                                    <li>Established standardized workflows reducing design cycle time by 25%</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="timeline-date">Jan 2021 - Sep 2023</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-content">
+                        <div class="timeline-content" data-role="ferrari-senior">
                             <h3 class="role-title">Senior CATIA Support Engineer</h3>
                             <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
                             <p class="role-description">Focused on developing custom automation tools to enhance team design efficiency and productivity in high-pressure F1 development cycles.</p>
@@ -1297,16 +1174,21 @@
                                 <li>Developed and managed custom design automation tools</li>
                                 <li>Significantly improved team design efficiency through tool optimization</li>
                                 <li>Provided critical technical support during race development cycles</li>
-                                <li>Created automated workflows reducing manual design tasks by 40%</li>
-                                <li>Implemented quality control measures preventing design errors</li>
-                                <li>Supported rapid prototyping initiatives for competitive advantage</li>
                             </ul>
+                            <button class="expand-btn" onclick="toggleDetails('ferrari-senior')">View Detailed Impact</button>
+                            <div class="detailed-achievements" id="ferrari-senior-details">
+                                <ul class="achievements">
+                                    <li>Created automated workflows reducing manual design tasks by 40%</li>
+                                    <li>Implemented quality control measures preventing design errors</li>
+                                    <li>Supported rapid prototyping initiatives for competitive advantage</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="timeline-date">Jan 2020 - Jan 2021</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-content">
+                        <div class="timeline-content" data-role="bombardier">
                             <h3 class="role-title">Senior Engineering Design Automations Team Lead</h3>
                             <div class="company">Bombardier Aerospace | Montréal, Canada</div>
                             <p class="role-description">Led global team of CAD engineers supporting 350+ users across 6 international sites, driving automation and quality standards across aerospace operations.</p>
@@ -1314,19 +1196,24 @@
                                 <li>Managed team of 3 CAD Engineers supporting 350+ global users</li>
                                 <li>Automated business quality standards into custom Quality Control tool</li>
                                 <li>Led development, testing, release, and maintenance of custom engineering tools</li>
-                                <li>Supervised tool architecture for standardization, robustness, and reusability</li>
-                                <li>Performed user audits ensuring methodology adoption and compliance</li>
-                                <li>Established Design Efficiency Improvement Plans with executive management</li>
-                                <li>Implemented Web APIs and service requests for custom tools</li>
-                                <li>Provided strategic technical expertise to C-level executives for future planning</li>
-                                <li>Reduced design errors by 60% through automated quality controls</li>
                             </ul>
+                            <button class="expand-btn" onclick="toggleDetails('bombardier')">View Detailed Impact</button>
+                            <div class="detailed-achievements" id="bombardier-details">
+                                <ul class="achievements">
+                                    <li>Supervised tool architecture for standardization, robustness, and reusability</li>
+                                    <li>Performed user audits ensuring methodology adoption and compliance</li>
+                                    <li>Established Design Efficiency Improvement Plans with executive management</li>
+                                    <li>Implemented Web APIs and service requests for custom tools</li>
+                                    <li>Provided strategic technical expertise to C-level executives for future planning</li>
+                                    <li>Reduced design errors by 60% through automated quality controls</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="timeline-date">Apr 2015 - Oct 2019</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-content">
+                        <div class="timeline-content" data-role="lotus">
                             <h3 class="role-title">CAD & PLM Support Administrator</h3>
                             <div class="company">Lotus F1 Team | Enstone, United Kingdom</div>
                             <p class="role-description">Managed comprehensive Design Efficiency Improvement Program while contributing directly to aerodynamic surface design and composite bodywork development.</p>
@@ -1334,17 +1221,22 @@
                                 <li>Managed Design Efficiency Improvement Program for entire Design Office</li>
                                 <li>Developed and deployed VBA Macros, Scripts, and Batch automation</li>
                                 <li>Served dual role as Lead Aero Surface Designer for complex chassis surfaces</li>
-                                <li>Created innovative composite design solutions for Formula 1 bodywork</li>
-                                <li>Implemented automated workflows reducing design cycle time</li>
-                                <li>Contributed to aerodynamic performance improvements through surface optimization</li>
-                                <li>Established processes that became industry best practices</li>
                             </ul>
+                            <button class="expand-btn" onclick="toggleDetails('lotus')">View Detailed Impact</button>
+                            <div class="detailed-achievements" id="lotus-details">
+                                <ul class="achievements">
+                                    <li>Created innovative composite design solutions for Formula 1 bodywork</li>
+                                    <li>Implemented automated workflows reducing design cycle time</li>
+                                    <li>Contributed to aerodynamic performance improvements through surface optimization</li>
+                                    <li>Established processes that became industry best practices</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="timeline-date">Jun 2012 - Mar 2015</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-content">
+                        <div class="timeline-content" data-role="consulting">
                             <h3 class="role-title">Senior Aero Concept Surface Designer</h3>
                             <div class="company">Nous-Consulting for Ferrari SpA | Maranello, Italy</div>
                             <p class="role-description">Specialized consulting role as CATIA V5 Expert, optimizing rapid prototyping processes and managing regulatory compliance automation.</p>
@@ -1358,7 +1250,7 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-content">
+                        <div class="timeline-content" data-role="early-career">
                             <h3 class="role-title">Early Career Development</h3>
                             <div class="company">Various Organizations | North America</div>
                             <p class="role-description">Progressive roles building foundation in CAD development, project management, and engineering design across multiple industries.</p>
@@ -1366,12 +1258,17 @@
                                 <li><strong>CATIA Development Manager</strong> - Innovation Virtuael (2008-2010)</li>
                                 <li><strong>CATIA Support & Design Engineering</strong> - Mecachrome (2004-2008)</li>
                                 <li><strong>Research Assistant & Teacher</strong> - Florida Institute of Technology (2002-2003)</li>
-                                <li>Developed client-customized programs reducing costs and increasing quality</li>
-                                <li>Managed complete project workflows from requirements to release</li>
-                                <li>Reported directly to Directors on project status and strategic initiatives</li>
-                                <li>Built expertise in Mass Properties Engineering and Junior Design roles</li>
-                                <li>Contributed to SAE Formula Car design and manufacturing</li>
                             </ul>
+                            <button class="expand-btn" onclick="toggleDetails('early-career')">View Detailed Experience</button>
+                            <div class="detailed-achievements" id="early-career-details">
+                                <ul class="achievements">
+                                    <li>Developed client-customized programs reducing costs and increasing quality</li>
+                                    <li>Managed complete project workflows from requirements to release</li>
+                                    <li>Reported directly to Directors on project status and strategic initiatives</li>
+                                    <li>Built expertise in Mass Properties Engineering and Junior Design roles</li>
+                                    <li>Contributed to SAE Formula Car design and manufacturing</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="timeline-date">2002 - 2010</div>
                     </div>
@@ -1553,7 +1450,7 @@
                             </div>
                         </div>
 
-                        <button class="download-cv" onclick="requestCvDownload()">📄 Download Complete CV</button>
+                        <a href="#" class="download-cv" onclick="downloadCV()">📄 Download Complete CV</a>
                     </div>
 
                     <div class="contact-form">
@@ -1651,97 +1548,17 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- CV Download Modal with CAPTCHA -->
-                <div id="cv-modal" class="modal" style="display: none;">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Download CV</h3>
-                            <button class="modal-close" onclick="hideCvForm()">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <p style="color: var(--text-gray); margin-bottom: 20px;">Please complete the security verification to download the CV:</p>
-                            <form id="cvForm">
-                                <div class="form-group">
-                                    <label for="cv-name">Name *</label>
-                                    <input type="text" id="cv-name" name="cv-name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cv-email">Email *</label>
-                                    <input type="email" id="cv-email" name="cv-email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cv-company">Company / Organization</label>
-                                    <input type="text" id="cv-company" name="cv-company" placeholder="Optional">
-                                </div>
-                                <div class="captcha-container">
-                                    <div class="captcha-question" id="captcha-question">What is 5 + 3?</div>
-                                    <input type="number" id="captcha-answer" class="captcha-input" placeholder="?" required>
-                                    <button type="button" class="captcha-refresh" onclick="generateCaptcha()">🔄 New Question</button>
-                                </div>
-                                <button type="submit" class="submit-btn">Verify & Download CV</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </div>
 
     <script>
-        // Global variables for CAPTCHA
-        let captchaAnswer = 8;
-
-        // Generate random CAPTCHA
-        function generateCaptcha() {
-            const num1 = Math.floor(Math.random() * 20) + 1;
-            const num2 = Math.floor(Math.random() * 20) + 1;
-            const operations = ['+', '-', '*'];
-            const operation = operations[Math.floor(Math.random() * operations.length)];
-            
-            let answer;
-            switch(operation) {
-                case '+':
-                    answer = num1 + num2;
-                    break;
-                case '-':
-                    answer = num1 - num2;
-                    break;
-                case '*':
-                    answer = num1 * num2;
-                    break;
-            }
-            
-            document.getElementById('captcha-question').textContent = `What is ${num1} ${operation} ${num2}?`;
-            captchaAnswer = answer;
-            document.getElementById('captcha-answer').value = '';
-        }
-
         // Enhanced navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const pages = document.querySelectorAll('.page');
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.querySelector('.nav-menu');
-
-            // Initialize CAPTCHA
-            generateCaptcha();
-
-            // Handle headshot image loading
-            const profileImages = document.querySelectorAll('.profile-image');
-            profileImages.forEach(img => {
-                // Create a test image to check if the headshot exists
-                const testImg = new Image();
-                testImg.onload = function() {
-                    // If image loads successfully, remove fallback class
-                    img.classList.remove('fallback');
-                };
-                testImg.onerror = function() {
-                    // If image fails to load, keep fallback styling
-                    console.log('Headshot image not found, using initials fallback');
-                };
-                testImg.src = '/resources/headshot.jpeg';
-            });
 
             // Page navigation with enhanced animations
             function showPage(targetPage) {
@@ -1762,10 +1579,6 @@
                 if (activeLink) {
                     activeLink.classList.add('active');
                 }
-
-                // Close mobile menu
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
 
                 // Enhanced animations on page load
                 setTimeout(() => {
@@ -1799,6 +1612,7 @@
                     e.preventDefault();
                     const targetPage = this.getAttribute('data-page');
                     showPage(targetPage);
+                    navMenu.classList.remove('active');
                 });
             });
 
@@ -1812,19 +1626,38 @@
             });
 
             // Mobile menu toggle
-            hamburger.addEventListener('click', function(e) {
-                e.stopPropagation();
+            hamburger.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
             });
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                     navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
                 }
             });
+
+            // Timeline expand/collapse functionality
+            window.toggleDetails = function(roleId) {
+                const detailsElement = document.getElementById(roleId + '-details');
+                const button = document.querySelector(`[data-role="${roleId}"] .expand-btn`);
+                
+                if (detailsElement.classList.contains('expanded')) {
+                    detailsElement.classList.remove('expanded');
+                    button.textContent = 'View Detailed Impact';
+                } else {
+                    // Close other expanded items
+                    document.querySelectorAll('.detailed-achievements.expanded').forEach(el => {
+                        el.classList.remove('expanded');
+                    });
+                    document.querySelectorAll('.expand-btn').forEach(btn => {
+                        btn.textContent = 'View Detailed Impact';
+                    });
+                    
+                    detailsElement.classList.add('expanded');
+                    button.textContent = 'Hide Details';
+                }
+            };
 
             // Contact form handling with enhanced validation
             const contactForm = document.getElementById('contactForm');
@@ -1853,7 +1686,7 @@
                 
                 const submitBtn = contactForm.querySelector('.submit-btn');
                 const originalText = submitBtn.textContent;
-                submitBtn.innerHTML = '<span class="loading-spinner">Sending Message... <div class="spinner"></div></span>';
+                submitBtn.textContent = 'Sending Message...';
                 submitBtn.disabled = true;
                 
                 // Simulate form submission with enhanced feedback
@@ -1877,79 +1710,6 @@
                 });
             }
 
-            // CV Download functionality with CAPTCHA
-            window.requestCvDownload = function() {
-                document.getElementById('cv-modal').style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                generateCaptcha(); // Generate new CAPTCHA each time
-            };
-
-            window.hideCvForm = function() {
-                document.getElementById('cv-modal').style.display = 'none';
-                document.body.style.overflow = 'auto';
-                document.getElementById('cvForm').reset();
-            };
-
-            // CV form submission with CAPTCHA validation
-            const cvForm = document.getElementById('cvForm');
-            cvForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const formData = new FormData(cvForm);
-                const data = Object.fromEntries(formData);
-                
-                // Validate required fields
-                if (!data['cv-name'] || !data['cv-email'] || !data['captcha-answer']) {
-                    alert('Please fill in all required fields and complete the security verification.');
-                    return;
-                }
-                
-                // Validate email
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(data['cv-email'])) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-                
-                // Validate CAPTCHA
-                if (parseInt(data['captcha-answer']) !== captchaAnswer) {
-                    alert('Security verification failed. Please check your answer and try again.');
-                    generateCaptcha(); // Generate new CAPTCHA
-                    return;
-                }
-                
-                const submitBtn = cvForm.querySelector('.submit-btn');
-                const originalText = submitBtn.textContent;
-                submitBtn.innerHTML = '<span class="loading-spinner">Verifying... <div class="spinner"></div></span>';
-                submitBtn.disabled = true;
-                
-                // Simulate verification and download
-                setTimeout(() => {
-                    // In a real implementation, this would trigger the actual PDF download
-                    // For now, we'll simulate the download process
-                    const link = document.createElement('a');
-                    link.href = '/docs/LionelFevre_Senior_Eng_Process_Leader.pdf';
-                    link.download = 'LionelFevre_Senior_Eng_Process_Leader.pdf';
-                    document.body.appendChild(link);
-                    
-                    // Attempt to download - if file doesn't exist, show appropriate message
-                    link.onclick = function() {
-                        setTimeout(() => {
-                            alert(`Thank you ${data['cv-name']}! Your CV download has been initiated. If the download doesn't start automatically, please contact me directly.`);
-                        }, 500);
-                    };
-                    
-                    link.click();
-                    document.body.removeChild(link);
-                    
-                    // Reset form and close modal
-                    cvForm.reset();
-                    hideCvForm();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 1500);
-            });
-
             // Callback form functionality
             window.showCallbackForm = function() {
                 document.getElementById('callback-modal').style.display = 'flex';
@@ -1959,7 +1719,6 @@
             window.hideCallbackForm = function() {
                 document.getElementById('callback-modal').style.display = 'none';
                 document.body.style.overflow = 'auto';
-                document.getElementById('callbackForm').reset();
             };
 
             // Callback form submission
@@ -1994,7 +1753,7 @@
                     
                     const submitBtn = callbackForm.querySelector('.submit-btn');
                     const originalText = submitBtn.textContent;
-                    submitBtn.innerHTML = '<span class="loading-spinner">Submitting Request... <div class="spinner"></div></span>';
+                    submitBtn.textContent = 'Submitting Request...';
                     submitBtn.disabled = true;
                     
                     // Simulate callback request submission
@@ -2008,25 +1767,26 @@
                 });
             }
 
-            // Close modals when clicking outside or pressing Escape
+            // Close modal when clicking outside
             document.addEventListener('click', function(e) {
-                const cvModal = document.getElementById('cv-modal');
-                const callbackModal = document.getElementById('callback-modal');
-                
-                if (e.target === cvModal) {
-                    hideCvForm();
-                }
-                if (e.target === callbackModal) {
+                const modal = document.getElementById('callback-modal');
+                if (e.target === modal) {
                     hideCallbackForm();
                 }
             });
 
+            // Close modal with Escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    hideCvForm();
                     hideCallbackForm();
                 }
             });
+
+            // CV Download functionality
+            window.downloadCV = function() {
+                // In a real implementation, this would download the actual PDF
+                alert('CV download initiated. In a production environment, this would download Lionel\'s complete resume in PDF format.');
+            };
 
             // Enhanced scroll effects for navbar
             let lastScrollY = window.scrollY;
@@ -2166,14 +1926,14 @@
             // Add subtle parallax effect to hero section
             window.addEventListener('scroll', () => {
                 const heroSection = document.querySelector('.hero');
-                if (heroSection && window.innerWidth > 768) {
+                if (heroSection) {
                     const scrolled = window.pageYOffset;
                     const rate = scrolled * -0.5;
                     heroSection.style.transform = `translateY(${rate}px)`;
                 }
             });
 
-            // Professional typing effect for hero title
+            // Add professional typing effect to hero title (optional enhancement)
             const heroTitle = document.querySelector('.hero-title');
             if (heroTitle) {
                 const originalText = heroTitle.textContent;
@@ -2193,8 +1953,44 @@
             }
         });
 
-        // CAPTCHA utility functions
-        window.generateCaptcha = generateCaptcha;
+        // Additional utility functions for enhanced UX
+        function smoothScrollTo(element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Performance optimization: Lazy load heavy elements
+        const lazyElements = document.querySelectorAll('[data-lazy]');
+        const lazyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    // Load heavy content here if needed
+                    lazyObserver.unobserve(element);
+                }
+            });
+        });
+
+        lazyElements.forEach(el => lazyObserver.observe(el));
+
+        // Add professional loading state for form submissions
+        function showLoadingState(button) {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<span style="display: inline-flex; align-items: center; gap: 10px;">Sending... <div style="width: 20px; height: 20px; border: 2px solid #ffffff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div></span>';
+            return originalHTML;
+        }
+
+        // Add CSS for spinner animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
