@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lionel Fèvre - Engineering Process Leader | Director-Level Engineering Management</title>
+    <title>Lionel Fevre - Engineering Process Leader | Director-Level Engineering Management</title>
     <meta name="description" content="Director-level Engineering Manager specializing in Process Optimization, Digital Transformation, and Design Efficiency. 20+ years experience from Ferrari F1 to Bombardier Aerospace.">
     <meta name="keywords" content="Engineering Director, Process Optimization, Digital Transformation, F1 Engineering, CAD PLM Leadership, Team Management">
     <style>
@@ -34,6 +34,7 @@
             background: linear-gradient(45deg, var(--primary-dark), var(--carbon-bg));
             background-attachment: fixed;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Carbon Fiber Background Pattern */
@@ -97,6 +98,8 @@
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
+            background: none;
+            border: none;
         }
 
         .nav-link::after {
@@ -125,6 +128,8 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            background: none;
+            border: none;
         }
 
         .hamburger span {
@@ -136,22 +141,16 @@
             box-shadow: 0 0 5px var(--electric-blue);
         }
 
-        /* Pages */
-        .page {
-            display: none;
+        /* Sections */
+        .section {
             min-height: 100vh;
-            padding-top: 80px;
+            padding: 120px 0 80px;
+            position: relative;
         }
 
-        .page.active {
-            display: block;
-        }
-
-        /* Home Page */
+        /* Home Section */
         .hero {
             background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(26, 26, 26, 0.9));
-            padding: 120px 0;
-            text-align: center;
             position: relative;
         }
 
@@ -214,6 +213,7 @@
             margin-bottom: 1rem;
             font-weight: 300;
             color: var(--text-white);
+            text-align: center;
         }
 
         .hero-title {
@@ -221,6 +221,7 @@
             font-size: 1.5rem;
             margin-bottom: 2rem;
             text-shadow: 0 0 10px var(--electric-blue);
+            text-align: center;
         }
 
         .hero-subtitle {
@@ -230,6 +231,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            text-align: center;
         }
 
         .cta-buttons {
@@ -251,6 +253,7 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+            cursor: pointer;
         }
 
         .cta-button:hover {
@@ -341,11 +344,7 @@
             margin: 0 auto;
         }
 
-        /* About Page */
-        .about-content {
-            padding: 100px 0;
-        }
-
+        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -378,6 +377,7 @@
         .achievements-section {
             background: rgba(45, 45, 45, 0.3);
             padding: 80px 0;
+            border-radius: 30px;
         }
 
         .achievements-grid {
@@ -406,11 +406,7 @@
             font-size: 1.3rem;
         }
 
-        /* Experience Page */
-        .experience-content {
-            padding: 100px 0;
-        }
-
+        /* Experience Section */
         .timeline {
             position: relative;
             margin: 50px 0;
@@ -541,11 +537,7 @@
             display: block;
         }
 
-        /* Skills Page */
-        .skills-content {
-            padding: 100px 0;
-        }
-
+        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -597,11 +589,7 @@
             box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
         }
 
-        /* Contact Page */
-        .contact-content {
-            padding: 100px 0;
-        }
-
+        /* Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -637,24 +625,6 @@
             margin-right: 20px;
             width: 40px;
             text-align: center;
-        }
-
-        .download-cv {
-            background: linear-gradient(45deg, var(--electric-blue), var(--accent-blue));
-            color: var(--text-white);
-            padding: 20px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
-        }
-
-        .download-cv:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
         }
 
         .contact-form {
@@ -697,7 +667,8 @@
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
         }
 
-        .submit-btn {
+        .submit-btn,
+        .download-cv {
             background: linear-gradient(45deg, var(--electric-blue), var(--accent-blue));
             color: var(--text-white);
             padding: 18px 40px;
@@ -708,14 +679,18 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover,
+        .download-cv:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
         }
 
-        /* Email Reveal Button */
+        /* Button Styles */
         .reveal-email-btn {
             background: linear-gradient(45deg, var(--electric-blue), var(--accent-blue));
             color: var(--text-white);
@@ -734,7 +709,6 @@
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.5);
         }
 
-        /* Callback Button */
         .callback-btn {
             background: transparent;
             border: 2px solid var(--electric-blue);
@@ -754,7 +728,6 @@
             transform: translateY(-2px);
         }
 
-        /* LinkedIn Button */
         .linkedin-btn {
             display: inline-block;
             background: #0077b5;
@@ -784,10 +757,14 @@
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             z-index: 2000;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
         }
 
         .modal-content {
@@ -876,7 +853,7 @@
                 left: 0;
             }
 
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
 
@@ -934,7 +911,12 @@
             }
         }
 
-        /* Animations */
+        /* Smooth scroll offset */
+        .section {
+            scroll-margin-top: 80px;
+        }
+
+        /* Hide sections initially for fade-in effect */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -945,28 +927,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.6s ease;
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.6s ease;
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
     </style>
 </head>
 <body>
@@ -974,43 +934,41 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Lionel Fèvre</div>
+                <div class="logo">Lionel Fevre</div>
                 <ul class="nav-menu">
-                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
-                    <li><a href="#" class="nav-link" data-page="experience">Experience</a></li>
-                    <li><a href="#" class="nav-link" data-page="skills">Skills & Expertise</a></li>
-                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    <li><button class="nav-link active" data-section="home">Home</button></li>
+                    <li><button class="nav-link" data-section="about">About</button></li>
+                    <li><button class="nav-link" data-section="experience">Experience</button></li>
+                    <li><button class="nav-link" data-section="skills">Skills & Expertise</button></li>
+                    <li><button class="nav-link" data-section="contact">Contact</button></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Home Page -->
-    <div id="home" class="page active">
-        <section class="hero">
-            <div class="container">
-                <div class="profile-container">
-                    <div class="profile-image">LF</div>
-                    <div class="hero-content">
-                        <h1>Lionel Fèvre</h1>
-                        <div class="hero-title">Director-Level Engineering Leader</div>
-                        <p class="hero-subtitle">Specializing in Engineering Processes, Digital Transformation & High-Performance Team Building</p>
-                        <div class="cta-buttons">
-                            <a href="#" class="cta-button" data-page="about">Discover My Approach</a>
-                            <a href="#" class="cta-button secondary" data-page="contact">Let's Connect</a>
-                        </div>
+    <!-- Home Section -->
+    <section id="home" class="section hero">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-image">LF</div>
+                <div class="hero-content">
+                    <h1>Lionel Fevre</h1>
+                    <div class="hero-title">Director-Level Engineering Leader</div>
+                    <p class="hero-subtitle">Specializing in Engineering Processes, Digital Transformation & High-Performance Team Building</p>
+                    <div class="cta-buttons">
+                        <button class="cta-button" data-section="about">Discover My Approach</button>
+                        <button class="cta-button secondary" data-section="contact">Let's Connect</button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="key-stats">
+        <div class="key-stats">
             <div class="container">
                 <div class="section-header">
                     <h2>Driving Engineering Excellence</h2>
@@ -1035,44 +993,40 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- About Page -->
-    <div id="about" class="page">
-        <section class="about-content">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                    <p>Transformational engineering leader with two decades of experience driving process optimization and digital transformation</p>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Transformational engineering leader with two decades of experience driving process optimization and digital transformation</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-profile fade-in">
+                    <div class="profile-image" style="width: 100%; height: 300px; margin-bottom: 30px;">LF</div>
+                    <h3>Leadership Philosophy</h3>
+                    <p>I believe in empowering teams through systematic process optimization and innovative technology adoption. My approach combines analytical rigor with collaborative leadership to drive sustainable engineering excellence.</p>
                 </div>
-
-                <div class="about-grid">
-                    <div class="about-profile slide-in-left">
-                        <div class="profile-image" style="width: 100%; height: 300px; margin-bottom: 30px;">LF</div>
-                        <h3>Leadership Philosophy</h3>
-                        <p>I believe in empowering teams through systematic process optimization and innovative technology adoption. My approach combines analytical rigor with collaborative leadership to drive sustainable engineering excellence.</p>
-                    </div>
+                
+                <div class="about-text fade-in">
+                    <h3>Professional Journey</h3>
+                    <p>My career spans over two decades of engineering leadership across some of the world's most demanding environments - from Formula 1 racing at Ferrari and Lotus, to aerospace innovation at Bombardier. This unique blend of high-stakes motorsport and aerospace engineering has shaped my approach to process optimization and team performance.</p>
                     
-                    <div class="about-text slide-in-right">
-                        <h3>Professional Journey</h3>
-                        <p>My career spans over two decades of engineering leadership across some of the world's most demanding environments - from Formula 1 racing at Ferrari and Lotus, to aerospace innovation at Bombardier. This unique blend of high-stakes motorsport and aerospace engineering has shaped my approach to process optimization and team performance.</p>
-                        
-                        <p>Currently serving as Head of Design Processes at Scuderia Ferrari F1, I lead the standardization of tools and processes across multiple design offices, manage CAD/PLM governance, and drive continuous improvement initiatives that directly impact race performance.</p>
-                        
-                        <p>My expertise lies in transforming complex engineering challenges into streamlined, efficient processes that deliver measurable results. I specialize in building high-performing teams, implementing cutting-edge digital tools, and establishing governance frameworks that scale across international operations.</p>
+                    <p>Currently serving as Head of Design Processes at Scuderia Ferrari F1, I lead the standardization of tools and processes across multiple design offices, manage CAD/PLM governance, and drive continuous improvement initiatives that directly impact race performance.</p>
+                    
+                    <p>My expertise lies in transforming complex engineering challenges into streamlined, efficient processes that deliver measurable results. I specialize in building high-performing teams, implementing cutting-edge digital tools, and establishing governance frameworks that scale across international operations.</p>
 
-                        <h3>Academic Foundation</h3>
-                        <p><strong>Master of Science in Mechanical Engineering</strong> - Florida Institute of Technology (GPA: 4.00/4.00)</p>
-                        <p><strong>Bachelor of Science in Mechanical Engineering</strong> - Florida Institute of Technology (GPA: 3.87/4.00)</p>
-                        <p>Thesis: "Design and Construction of Six Degree-of-Freedom Positioning System" - demonstrating early passion for precision engineering and automation.</p>
-                    </div>
+                    <h3>Academic Foundation</h3>
+                    <p><strong>Master of Science in Mechanical Engineering</strong> - Florida Institute of Technology (GPA: 4.00/4.00)</p>
+                    <p><strong>Bachelor of Science in Mechanical Engineering</strong> - Florida Institute of Technology (GPA: 3.87/4.00)</p>
+                    <p>Thesis: "Design and Construction of Six Degree-of-Freedom Positioning System" - demonstrating early passion for precision engineering and automation.</p>
                 </div>
             </div>
-        </section>
 
-        <section class="achievements-section">
-            <div class="container">
+            <div class="achievements-section">
                 <div class="section-header">
                     <h2>Professional Certifications & Core Competencies</h2>
                     <p>Specialized expertise in leadership methodologies and crisis management</p>
@@ -1104,524 +1058,422 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- Experience Page -->
-    <div id="experience" class="page">
-        <section class="experience-content">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Professional Experience</h2>
-                    <p>Two decades of progressive leadership across elite engineering organizations</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <p>Two decades of progressive leadership across elite engineering organizations</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content" data-role="ferrari-head">
+                        <h3 class="role-title">Head of Design Processes, Tools & Engineering Services</h3>
+                        <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
+                        <p class="role-description">Leading digital transformation and AI integration across Ferrari F1's design offices, directly impacting race performance through operational excellence and innovation.</p>
+                        <ul class="achievements">
+                            <li>Development of AI Tools and Agents to eliminate inefficient tasks</li>
+                            <li>Standardized tools and processes across multiple international design offices</li>
+                            <li>Created comprehensive Material Database for Composites, Metals, and Polymers</li>
+                            <li>Led CAD/PLM governance ensuring downstream data compliance and integrity</li>
+                        </ul>
+                        <button class="expand-btn" onclick="toggleDetails('ferrari-head')">View Detailed Impact</button>
+                        <div class="detailed-achievements" id="ferrari-head-details">
+                            <ul class="achievements">
+                                <li>Implemented frequent data compliance declarations with FIA authorities</li>
+                                <li>Applied Agile management techniques for efficient team prioritization</li>
+                                <li>Optimized budget allocation for hardware, licenses, and supplier developments</li>
+                                <li>Managed external consultants, suppliers, and engineering internship programs</li>
+                                <li>Drove disruptive leadership initiatives promoting innovation beyond industry best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-date">Sep 2023 - Present</div>
                 </div>
 
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content" data-role="ferrari-head">
-                            <h3 class="role-title">Head of Design Processes, Tools & Engineering Services</h3>
-                            <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
-                            <p class="role-description">Leading digital transformation and AI integration across Ferrari F1's design offices, directly impacting race performance through operational excellence and innovation.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content" data-role="ferrari-responsible">
+                        <h3 class="role-title">Responsible for Design Tools and Methodologies</h3>
+                        <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
+                        <p class="role-description">Managed cross-functional team driving Design Efficiency Improvement Program and CAD/PLM tool optimization for competitive advantage.</p>
+                        <ul class="achievements">
+                            <li>Led team of 4 engineers in Design Efficiency Improvement Program</li>
+                            <li>Developed and optimized CAD & PLM tools for enhanced productivity</li>
+                            <li>Built comprehensive self-learning training materials and assessment programs</li>
+                        </ul>
+                        <button class="expand-btn" onclick="toggleDetails('ferrari-responsible')">View Detailed Impact</button>
+                        <div class="detailed-achievements" id="ferrari-responsible-details">
                             <ul class="achievements">
-                                <li>Development of AI Tools and Agents to eliminate inefficient tasks</li>
-                                <li>Standardized tools and processes across multiple international design offices</li>
-                                <li>Created comprehensive Material Database for Composites, Metals, and Polymers</li>
-                                <li>Led CAD/PLM governance ensuring downstream data compliance and integrity</li>
+                                <li>Published and maintained Engineering Standards across the organization</li>
+                                <li>Authored technical documentation and methodologies</li>
+                                <li>Implemented knowledge assessment systems for continuous improvement</li>
+                                <li>Established standardized workflows reducing design cycle time by 25%</li>
                             </ul>
-                            <button class="expand-btn" onclick="toggleDetails('ferrari-head')">View Detailed Impact</button>
-                            <div class="detailed-achievements" id="ferrari-head-details">
-                                <ul class="achievements">
-                                    <li>Implemented frequent data compliance declarations with FIA authorities</li>
-                                    <li>Applied Agile management techniques for efficient team prioritization</li>
-                                    <li>Optimized budget allocation for hardware, licenses, and supplier developments</li>
-                                    <li>Managed external consultants, suppliers, and engineering internship programs</li>
-                                    <li>Drove disruptive leadership initiatives promoting innovation beyond industry best practices</li>
-                                </ul>
-                            </div>
                         </div>
-                        <div class="timeline-date">Sep 2023 - Present</div>
                     </div>
+                    <div class="timeline-date">Jan 2021 - Sep 2023</div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-content" data-role="ferrari-responsible">
-                            <h3 class="role-title">Responsible for Design Tools and Methodologies</h3>
-                            <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
-                            <p class="role-description">Managed cross-functional team driving Design Efficiency Improvement Program and CAD/PLM tool optimization for competitive advantage.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content" data-role="bombardier">
+                        <h3 class="role-title">Senior Engineering Design Automations Team Lead</h3>
+                        <div class="company">Bombardier Aerospace | Montréal, Canada</div>
+                        <p class="role-description">Led global team of CAD engineers supporting 350+ users across 6 international sites, driving automation and quality standards across aerospace operations.</p>
+                        <ul class="achievements">
+                            <li>Managed team of 3 CAD Engineers supporting 350+ global users</li>
+                            <li>Automated business quality standards into custom Quality Control tool</li>
+                            <li>Led development, testing, release, and maintenance of custom engineering tools</li>
+                        </ul>
+                        <button class="expand-btn" onclick="toggleDetails('bombardier')">View Detailed Impact</button>
+                        <div class="detailed-achievements" id="bombardier-details">
                             <ul class="achievements">
-                                <li>Led team of 4 engineers in Design Efficiency Improvement Program</li>
-                                <li>Developed and optimized CAD & PLM tools for enhanced productivity</li>
-                                <li>Built comprehensive self-learning training materials and assessment programs</li>
+                                <li>Supervised tool architecture for standardization, robustness, and reusability</li>
+                                <li>Performed user audits ensuring methodology adoption and compliance</li>
+                                <li>Established Design Efficiency Improvement Plans with executive management</li>
+                                <li>Implemented Web APIs and service requests for custom tools</li>
+                                <li>Provided strategic technical expertise to C-level executives for future planning</li>
+                                <li>Reduced design errors by 60% through automated quality controls</li>
                             </ul>
-                            <button class="expand-btn" onclick="toggleDetails('ferrari-responsible')">View Detailed Impact</button>
-                            <div class="detailed-achievements" id="ferrari-responsible-details">
-                                <ul class="achievements">
-                                    <li>Published and maintained Engineering Standards across the organization</li>
-                                    <li>Authored technical documentation and methodologies</li>
-                                    <li>Implemented knowledge assessment systems for continuous improvement</li>
-                                    <li>Established standardized workflows reducing design cycle time by 25%</li>
-                                </ul>
-                            </div>
                         </div>
-                        <div class="timeline-date">Jan 2021 - Sep 2023</div>
                     </div>
+                    <div class="timeline-date">Apr 2015 - Oct 2019</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="timeline-item">
-                        <div class="timeline-content" data-role="ferrari-senior">
-                            <h3 class="role-title">Senior CATIA Support Engineer</h3>
-                            <div class="company">Scuderia Ferrari F1 | Maranello, Italy</div>
-                            <p class="role-description">Focused on developing custom automation tools to enhance team design efficiency and productivity in high-pressure F1 development cycles.</p>
-                            <ul class="achievements">
-                                <li>Developed and managed custom design automation tools</li>
-                                <li>Significantly improved team design efficiency through tool optimization</li>
-                                <li>Provided critical technical support during race development cycles</li>
-                            </ul>
-                            <button class="expand-btn" onclick="toggleDetails('ferrari-senior')">View Detailed Impact</button>
-                            <div class="detailed-achievements" id="ferrari-senior-details">
-                                <ul class="achievements">
-                                    <li>Created automated workflows reducing manual design tasks by 40%</li>
-                                    <li>Implemented quality control measures preventing design errors</li>
-                                    <li>Supported rapid prototyping initiatives for competitive advantage</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-date">Jan 2020 - Jan 2021</div>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Expertise</h2>
+                <p>Comprehensive technical and leadership capabilities spanning engineering processes, digital transformation, and high-performance team management</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>🎯 Leadership & Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Executive Team Leadership</span>
+                        <span class="skill-tag">Cross-Cultural Management</span>
+                        <span class="skill-tag">Crisis Management</span>
+                        <span class="skill-tag">Strategic Decision Making</span>
+                        <span class="skill-tag">Agile Management</span>
+                        <span class="skill-tag">Budget Optimization</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">Executive Coaching</span>
+                        <span class="skill-tag">Change Leadership</span>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-content" data-role="bombardier">
-                            <h3 class="role-title">Senior Engineering Design Automations Team Lead</h3>
-                            <div class="company">Bombardier Aerospace | Montréal, Canada</div>
-                            <p class="role-description">Led global team of CAD engineers supporting 350+ users across 6 international sites, driving automation and quality standards across aerospace operations.</p>
-                            <ul class="achievements">
-                                <li>Managed team of 3 CAD Engineers supporting 350+ global users</li>
-                                <li>Automated business quality standards into custom Quality Control tool</li>
-                                <li>Led development, testing, release, and maintenance of custom engineering tools</li>
-                            </ul>
-                            <button class="expand-btn" onclick="toggleDetails('bombardier')">View Detailed Impact</button>
-                            <div class="detailed-achievements" id="bombardier-details">
-                                <ul class="achievements">
-                                    <li>Supervised tool architecture for standardization, robustness, and reusability</li>
-                                    <li>Performed user audits ensuring methodology adoption and compliance</li>
-                                    <li>Established Design Efficiency Improvement Plans with executive management</li>
-                                    <li>Implemented Web APIs and service requests for custom tools</li>
-                                    <li>Provided strategic technical expertise to C-level executives for future planning</li>
-                                    <li>Reduced design errors by 60% through automated quality controls</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-date">Apr 2015 - Oct 2019</div>
+                <div class="skill-category fade-in">
+                    <h3>⚙️ Engineering Processes</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Process Standardization</span>
+                        <span class="skill-tag">Design Efficiency</span>
+                        <span class="skill-tag">Quality Control Systems</span>
+                        <span class="skill-tag">Workflow Optimization</span>
+                        <span class="skill-tag">Engineering Documentation</span>
+                        <span class="skill-tag">Compliance Management</span>
+                        <span class="skill-tag">Best Practices Development</span>
+                        <span class="skill-tag">Performance Metrics</span>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-content" data-role="lotus">
-                            <h3 class="role-title">CAD & PLM Support Administrator</h3>
-                            <div class="company">Lotus F1 Team | Enstone, United Kingdom</div>
-                            <p class="role-description">Managed comprehensive Design Efficiency Improvement Program while contributing directly to aerodynamic surface design and composite bodywork development.</p>
-                            <ul class="achievements">
-                                <li>Managed Design Efficiency Improvement Program for entire Design Office</li>
-                                <li>Developed and deployed VBA Macros, Scripts, and Batch automation</li>
-                                <li>Served dual role as Lead Aero Surface Designer for complex chassis surfaces</li>
-                            </ul>
-                            <button class="expand-btn" onclick="toggleDetails('lotus')">View Detailed Impact</button>
-                            <div class="detailed-achievements" id="lotus-details">
-                                <ul class="achievements">
-                                    <li>Created innovative composite design solutions for Formula 1 bodywork</li>
-                                    <li>Implemented automated workflows reducing design cycle time</li>
-                                    <li>Contributed to aerodynamic performance improvements through surface optimization</li>
-                                    <li>Established processes that became industry best practices</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-date">Jun 2012 - Mar 2015</div>
+                <div class="skill-category fade-in">
+                    <h3>🚀 Digital Transformation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CAD/PLM Governance</span>
+                        <span class="skill-tag">Tool Standardization</span>
+                        <span class="skill-tag">Automation Implementation</span>
+                        <span class="skill-tag">Digital Strategy</span>
+                        <span class="skill-tag">Data Integrity</span>
+                        <span class="skill-tag">Technology Adoption</span>
+                        <span class="skill-tag">System Integration</span>
+                        <span class="skill-tag">Innovation Leadership</span>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-content" data-role="consulting">
-                            <h3 class="role-title">Senior Aero Concept Surface Designer</h3>
-                            <div class="company">Nous-Consulting for Ferrari SpA | Maranello, Italy</div>
-                            <p class="role-description">Specialized consulting role as CATIA V5 Expert, optimizing rapid prototyping processes and managing regulatory compliance automation.</p>
-                            <ul class="achievements">
-                                <li>Provided expert CATIA V5 consulting for Surfacic/Part Design/Macro development</li>
-                                <li>Optimized modularity of Rapid Prototyping Parts minimizing Wind Tunnel downtime</li>
-                                <li>Managed FIA Rules Macros and CATIA user automation</li>
-                            </ul>
-                        </div>
-                        <div class="timeline-date">Jan 2011 - May 2012</div>
+                <div class="skill-category fade-in">
+                    <h3>💻 Technical Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CATIA V5/V6 Expert</span>
+                        <span class="skill-tag">PLM Systems (Windchill, ENOVIA)</span>
+                        <span class="skill-tag">VBA/Macro Development</span>
+                        <span class="skill-tag">SQL & Database Management</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">AWS Infrastructure</span>
+                        <span class="skill-tag">Visual Studio & GIT</span>
+                        <span class="skill-tag">FEA Knowledge</span>
+                        <span class="skill-tag">Topology Optimization (nTop)</span>
+                        <span class="skill-tag">AI Tools Integration</span>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-content" data-role="early-career">
-                            <h3 class="role-title">Early Career Development</h3>
-                            <div class="company">Various Organizations | North America</div>
-                            <p class="role-description">Progressive roles building foundation in CAD development, project management, and engineering design across multiple industries.</p>
-                            <ul class="achievements">
-                                <li><strong>CATIA Development Manager</strong> - Innovation Virtuael (2008-2010)</li>
-                                <li><strong>CATIA Support & Design Engineering</strong> - Mecachrome (2004-2008)</li>
-                                <li><strong>Research Assistant & Teacher</strong> - Florida Institute of Technology (2002-2003)</li>
-                            </ul>
-                            <button class="expand-btn" onclick="toggleDetails('early-career')">View Detailed Experience</button>
-                            <div class="detailed-achievements" id="early-career-details">
-                                <ul class="achievements">
-                                    <li>Developed client-customized programs reducing costs and increasing quality</li>
-                                    <li>Managed complete project workflows from requirements to release</li>
-                                    <li>Reported directly to Directors on project status and strategic initiatives</li>
-                                    <li>Built expertise in Mass Properties Engineering and Junior Design roles</li>
-                                    <li>Contributed to SAE Formula Car design and manufacturing</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-date">2002 - 2010</div>
+                <div class="skill-category fade-in">
+                    <h3>🏎️ Industry Specializations</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Formula 1 Engineering</span>
+                        <span class="skill-tag">Aerospace Systems</span>
+                        <span class="skill-tag">Automotive Design</span>
+                        <span class="skill-tag">Composite Materials</span>
+                        <span class="skill-tag">Aerodynamic Surfaces</span>
+                        <span class="skill-tag">Rapid Prototyping</span>
+                        <span class="skill-tag">Wind Tunnel Operations</span>
+                        <span class="skill-tag">Regulatory Compliance</span>
+                        <span class="skill-tag">High-Stakes Development</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>🌍 Global Operations</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Multi-Site Coordination</span>
+                        <span class="skill-tag">International Team Leadership</span>
+                        <span class="skill-tag">Vendor Management</span>
+                        <span class="skill-tag">Cross-Timezone Collaboration</span>
+                        <span class="skill-tag">Cultural Intelligence</span>
+                        <span class="skill-tag">Remote Team Management</span>
+                        <span class="skill-tag">Global Process Standardization</span>
+                        <span class="skill-tag">Multilingual Communication</span>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- Skills Page -->
-    <div id="skills" class="page">
-        <section class="skills-content">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Skills & Expertise</h2>
-                    <p>Comprehensive technical and leadership capabilities spanning engineering processes, digital transformation, and high-performance team management</p>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+                <p>Ready to discuss how I can drive engineering excellence and digital transformation in your organization</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="color: var(--electric-blue); margin-bottom: 30px; font-size: 1.8rem;">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong style="color: var(--electric-blue);">Email</strong><br>
+                            <div id="email-container">
+                                <button id="reveal-email-btn" class="reveal-email-btn">
+                                    🔓 Click to Reveal Email
+                                </button>
+                                <span id="email-address" style="color: var(--text-gray); display: none;">inquiry@fevreconcept.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong style="color: var(--electric-blue);">Callback Request</strong><br>
+                            <span style="color: var(--text-gray);">Request a scheduled callback</span><br>
+                            <button class="callback-btn" onclick="showCallbackForm()">📅 Schedule Callback</button>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <div>
+                            <strong style="color: var(--electric-blue);">LinkedIn</strong><br>
+                            <a href="https://www.linkedin.com/in/lionelfevre" target="_blank" class="linkedin-btn">
+                                Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong style="color: var(--electric-blue);">Location</strong><br>
+                            <span style="color: var(--text-gray);">Via Cappella 23, Maranello, Italy</span><br>
+                            <small style="color: var(--accent-blue);">Open to relocation globally</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">🌍</span>
+                        <div>
+                            <strong style="color: var(--electric-blue);">Languages</strong><br>
+                            <span style="color: var(--text-gray);">English (Bilingual), French (Native), Italian (Fluent)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">🛂</span>
+                        <div>
+                            <strong style="color: var(--electric-blue);">Work Authorization</strong><br>
+                            <span style="color: var(--text-gray);">EU (Citizen Rights) | TN-1 Visa Eligible for USA</span><br>
+                            <small style="color: var(--accent-blue);">Authorized to work across Europe & North America</small>
+                        </div>
+                    </div>
+
+                    <a href="#" class="download-cv" onclick="downloadCV()">📄 Download Complete CV</a>
                 </div>
 
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>🎯 Leadership & Management</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Executive Team Leadership</span>
-                            <span class="skill-tag">Cross-Cultural Management</span>
-                            <span class="skill-tag">Crisis Management</span>
-                            <span class="skill-tag">Strategic Decision Making</span>
-                            <span class="skill-tag">Agile Management</span>
-                            <span class="skill-tag">Budget Optimization</span>
-                            <span class="skill-tag">Stakeholder Management</span>
-                            <span class="skill-tag">Executive Coaching</span>
-                            <span class="skill-tag">Change Leadership</span>
+                <div class="contact-form">
+                    <h3 style="color: var(--electric-blue); margin-bottom: 30px; font-size: 1.8rem;">Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>⚙️ Engineering Processes</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Process Standardization</span>
-                            <span class="skill-tag">Design Efficiency</span>
-                            <span class="skill-tag">Quality Control Systems</span>
-                            <span class="skill-tag">Workflow Optimization</span>
-                            <span class="skill-tag">Engineering Documentation</span>
-                            <span class="skill-tag">Compliance Management</span>
-                            <span class="skill-tag">Best Practices Development</span>
-                            <span class="skill-tag">Performance Metrics</span>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>🚀 Digital Transformation</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">CAD/PLM Governance</span>
-                            <span class="skill-tag">Tool Standardization</span>
-                            <span class="skill-tag">Automation Implementation</span>
-                            <span class="skill-tag">Digital Strategy</span>
-                            <span class="skill-tag">Data Integrity</span>
-                            <span class="skill-tag">Technology Adoption</span>
-                            <span class="skill-tag">System Integration</span>
-                            <span class="skill-tag">Innovation Leadership</span>
+                        <div class="form-group">
+                            <label for="company">Company / Organization</label>
+                            <input type="text" id="company" name="company">
                         </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>💻 Technical Expertise</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">CATIA V5/V6 Expert</span>
-                            <span class="skill-tag">PLM Systems (Windchill, ENOVIA)</span>
-                            <span class="skill-tag">VBA/Macro Development</span>
-                            <span class="skill-tag">SQL & Database Management</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">AWS Infrastructure</span>
-                            <span class="skill-tag">Visual Studio & GIT</span>
-                            <span class="skill-tag">FEA Knowledge</span>
-                            <span class="skill-tag">Topology Optimization (nTop)</span>
-                            <span class="skill-tag">AI Tools Integration</span>
+                        <div class="form-group">
+                            <label for="position">Your Role</label>
+                            <input type="text" id="position" name="position" placeholder="e.g., VP Engineering, CTO, Recruiter">
                         </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>🏎️ Industry Specializations</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Formula 1 Engineering</span>
-                            <span class="skill-tag">Aerospace Systems</span>
-                            <span class="skill-tag">Automotive Design</span>
-                            <span class="skill-tag">Composite Materials</span>
-                            <span class="skill-tag">Aerodynamic Surfaces</span>
-                            <span class="skill-tag">Rapid Prototyping</span>
-                            <span class="skill-tag">Wind Tunnel Operations</span>
-                            <span class="skill-tag">Regulatory Compliance</span>
-                            <span class="skill-tag">High-Stakes Development</span>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="e.g., Director Engineering Opportunity, Consulting Discussion">
                         </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>🌍 Global Operations</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Multi-Site Coordination</span>
-                            <span class="skill-tag">International Team Leadership</span>
-                            <span class="skill-tag">Vendor Management</span>
-                            <span class="skill-tag">Cross-Timezone Collaboration</span>
-                            <span class="skill-tag">Cultural Intelligence</span>
-                            <span class="skill-tag">Remote Team Management</span>
-                            <span class="skill-tag">Global Process Standardization</span>
-                            <span class="skill-tag">Multilingual Communication</span>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your organization's engineering challenges and how my expertise in process optimization and digital transformation can help drive results..."></textarea>
                         </div>
-                    </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- Contact Page -->
-    <div id="contact" class="page">
-        <section class="contact-content">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Let's Connect</h2>
-                    <p>Ready to discuss how I can drive engineering excellence and digital transformation in your organization</p>
-                </div>
-
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3 style="color: var(--electric-blue); margin-bottom: 30px; font-size: 1.8rem;">Contact Information</h3>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Email</strong><br>
-                                <div id="email-container">
-                                    <button id="reveal-email-btn" class="reveal-email-btn">
-                                        🔓 Click to Reveal Email
-                                    </button>
-                                    <span id="email-address" style="color: var(--text-gray); display: none;">inquiry@fevreconcept.com</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Callback Request</strong><br>
-                                <span style="color: var(--text-gray);">Request a scheduled callback</span><br>
-                                <button class="callback-btn" onclick="showCallbackForm()">📅 Schedule Callback</button>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">💼</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">LinkedIn</strong><br>
-                                <a href="https://www.linkedin.com/in/lionelfevre" target="_blank" class="linkedin-btn">
-                                    Connect on LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Location</strong><br>
-                                <span style="color: var(--text-gray);">Via Cappella 23, Maranello, Italy</span><br>
-                                <small style="color: var(--accent-blue);">Open to relocation globally</small>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">🌍</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Languages</strong><br>
-                                <span style="color: var(--text-gray);">English (Bilingual), French (Native), Italian (Fluent)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">🛂</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Work Authorization</strong><br>
-                                <span style="color: var(--text-gray);">EU (Citizen Rights) | TN-1 Visa Eligible for USA</span><br>
-                                <small style="color: var(--accent-blue);">Authorized to work across Europe & North America</small>
-                            </div>
-                        </div>
-
-                        <a href="#" class="download-cv" onclick="downloadCV()">📄 Download Complete CV</a>
-                    </div>
-
-                    <div class="contact-form">
-                        <h3 style="color: var(--electric-blue); margin-bottom: 30px; font-size: 1.8rem;">Send a Message</h3>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="company">Company / Organization</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                            <div class="form-group">
-                                <label for="position">Your Role</label>
-                                <input type="text" id="position" name="position" placeholder="e.g., VP Engineering, CTO, Recruiter">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject *</label>
-                                <input type="text" id="subject" name="subject" required placeholder="e.g., Director Engineering Opportunity, Consulting Discussion">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="6" required placeholder="Tell me about your organization's engineering challenges and how my expertise in process optimization and digital transformation can help drive results..."></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Callback Request Modal -->
-                <div id="callback-modal" class="modal" style="display: none;">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Schedule a Callback</h3>
-                            <button class="modal-close" onclick="hideCallbackForm()">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <p style="color: var(--text-gray); margin-bottom: 20px;">I'll contact you to confirm the appointment. Please provide:</p>
-                            <form id="callbackForm">
-                                <div class="form-group">
-                                    <label for="callback-name">Name *</label>
-                                    <input type="text" id="callback-name" name="callback-name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-email">Email *</label>
-                                    <input type="email" id="callback-email" name="callback-email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-phone">Phone Number *</label>
-                                    <input type="tel" id="callback-phone" name="callback-phone" required placeholder="+1 (555) 123-4567">
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-country">Country *</label>
-                                    <input type="text" id="callback-country" name="callback-country" required placeholder="e.g., United States">
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-city">City *</label>
-                                    <input type="text" id="callback-city" name="callback-city" required placeholder="e.g., New York">
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-time">Best Time to Call *</label>
-                                    <select id="callback-time" name="callback-time" required>
-                                        <option value="">Select preferred time...</option>
-                                        <option value="9am-12pm">Morning (9 AM - 12 PM)</option>
-                                        <option value="12pm-3pm">Early Afternoon (12 PM - 3 PM)</option>
-                                        <option value="3pm-6pm">Late Afternoon (3 PM - 6 PM)</option>
-                                        <option value="6pm-8pm">Evening (6 PM - 8 PM)</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-timezone">Timezone</label>
-                                    <input type="text" id="callback-timezone" name="callback-timezone" placeholder="e.g., EST, PST, CET">
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-purpose">Purpose of Call</label>
-                                    <select id="callback-purpose" name="callback-purpose">
-                                        <option value="">Select purpose...</option>
-                                        <option value="job-opportunity">Job Opportunity Discussion</option>
-                                        <option value="consulting">Consulting Services</option>
-                                        <option value="partnership">Partnership Discussion</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="callback-notes">Additional Notes</label>
-                                    <textarea id="callback-notes" name="callback-notes" rows="3" placeholder="Any specific topics you'd like to discuss..."></textarea>
-                                </div>
-                                <button type="submit" class="submit-btn">Request Callback</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+    <!-- Callback Request Modal -->
+    <div id="callback-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Schedule a Callback</h3>
+                <button class="modal-close" onclick="hideCallbackForm()">&times;</button>
             </div>
-        </section>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); margin-bottom: 20px;">I'll contact you to confirm the appointment. Please provide:</p>
+                <form id="callbackForm">
+                    <div class="form-group">
+                        <label for="callback-name">Name *</label>
+                        <input type="text" id="callback-name" name="callback-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-email">Email *</label>
+                        <input type="email" id="callback-email" name="callback-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-phone">Phone Number *</label>
+                        <input type="tel" id="callback-phone" name="callback-phone" required placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-country">Country *</label>
+                        <input type="text" id="callback-country" name="callback-country" required placeholder="e.g., United States">
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-city">City *</label>
+                        <input type="text" id="callback-city" name="callback-city" required placeholder="e.g., New York">
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-time">Best Time to Call *</label>
+                        <select id="callback-time" name="callback-time" required>
+                            <option value="">Select preferred time...</option>
+                            <option value="9am-12pm">Morning (9 AM - 12 PM)</option>
+                            <option value="12pm-3pm">Early Afternoon (12 PM - 3 PM)</option>
+                            <option value="3pm-6pm">Late Afternoon (3 PM - 6 PM)</option>
+                            <option value="6pm-8pm">Evening (6 PM - 8 PM)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-timezone">Timezone</label>
+                        <input type="text" id="callback-timezone" name="callback-timezone" placeholder="e.g., EST, PST, CET">
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-purpose">Purpose of Call</label>
+                        <select id="callback-purpose" name="callback-purpose">
+                            <option value="">Select purpose...</option>
+                            <option value="job-opportunity">Job Opportunity Discussion</option>
+                            <option value="consulting">Consulting Services</option>
+                            <option value="partnership">Partnership Discussion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="callback-notes">Additional Notes</label>
+                        <textarea id="callback-notes" name="callback-notes" rows="3" placeholder="Any specific topics you'd like to discuss..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Request Callback</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Enhanced navigation functionality
+        // Enhanced navigation and scroll spy functionality
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
+            const sections = document.querySelectorAll('.section');
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.querySelector('.nav-menu');
+            
+            // Scroll spy functionality
+            function updateActiveNav() {
+                const scrollPosition = window.scrollY + 100;
 
-            // Page navigation with enhanced animations
-            function showPage(targetPage) {
-                pages.forEach(page => {
-                    page.classList.remove('active');
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
                 });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
+            }
 
-                const targetPageElement = document.getElementById(targetPage);
-                if (targetPageElement) {
-                    targetPageElement.classList.add('active');
+            // Smooth scroll to section
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const navbarHeight = 80;
+                    const sectionTop = section.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: sectionTop,
+                        behavior: 'smooth'
+                    });
                 }
-
-                const activeLink = document.querySelector(`[data-page="${targetPage}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-
-                // Enhanced animations on page load
-                setTimeout(() => {
-                    const fadeElements = targetPageElement.querySelectorAll('.fade-in');
-                    const slideLeftElements = targetPageElement.querySelectorAll('.slide-in-left');
-                    const slideRightElements = targetPageElement.querySelectorAll('.slide-in-right');
-                    
-                    fadeElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 150);
-                    });
-                    
-                    slideLeftElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 200);
-                    });
-                    
-                    slideRightElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 200 + 100);
-                    });
-                }, 100);
+                navMenu.classList.remove('active');
             }
 
             // Navigation event listeners
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetPage = this.getAttribute('data-page');
-                    showPage(targetPage);
-                    navMenu.classList.remove('active');
+                    const targetSection = this.getAttribute('data-section');
+                    scrollToSection(targetSection);
                 });
             });
 
             // CTA button navigation
             document.addEventListener('click', function(e) {
-                if (e.target.hasAttribute('data-page')) {
+                if (e.target.hasAttribute('data-section')) {
                     e.preventDefault();
-                    const targetPage = e.target.getAttribute('data-page');
-                    showPage(targetPage);
+                    const targetSection = e.target.getAttribute('data-section');
+                    scrollToSection(targetSection);
                 }
             });
 
@@ -1636,6 +1488,9 @@
                     navMenu.classList.remove('active');
                 }
             });
+
+            // Scroll event listener for scroll spy
+            window.addEventListener('scroll', updateActiveNav);
 
             // Timeline expand/collapse functionality
             window.toggleDetails = function(roleId) {
@@ -1659,7 +1514,7 @@
                 }
             };
 
-            // Contact form handling with enhanced validation
+            // Contact form handling
             const contactForm = document.getElementById('contactForm');
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -1667,7 +1522,6 @@
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
                 
-                // Enhanced validation
                 if (!data.name || !data.email || !data.subject || !data.message) {
                     alert('Please fill in all required fields marked with *');
                     return;
@@ -1689,7 +1543,6 @@
                 submitBtn.textContent = 'Sending Message...';
                 submitBtn.disabled = true;
                 
-                // Simulate form submission with enhanced feedback
                 setTimeout(() => {
                     alert(`Thank you ${data.name}! Your message has been received. I'll respond within 24 hours to discuss how I can help with your engineering leadership needs.`);
                     contactForm.reset();
@@ -1712,12 +1565,12 @@
 
             // Callback form functionality
             window.showCallbackForm = function() {
-                document.getElementById('callback-modal').style.display = 'flex';
+                document.getElementById('callback-modal').classList.add('show');
                 document.body.style.overflow = 'hidden';
             };
 
             window.hideCallbackForm = function() {
-                document.getElementById('callback-modal').style.display = 'none';
+                document.getElementById('callback-modal').classList.remove('show');
                 document.body.style.overflow = 'auto';
             };
 
@@ -1756,7 +1609,6 @@
                     submitBtn.textContent = 'Submitting Request...';
                     submitBtn.disabled = true;
                     
-                    // Simulate callback request submission
                     setTimeout(() => {
                         alert(`Thank you ${data['callback-name']}! Your callback request has been received. I'll contact you within 24 hours to schedule our conversation at your preferred time (${data['callback-time']}).`);
                         callbackForm.reset();
@@ -1784,7 +1636,6 @@
 
             // CV Download functionality
             window.downloadCV = function() {
-                // In a real implementation, this would download the actual PDF
                 alert('CV download initiated. In a production environment, this would download Lionel\'s complete resume in PDF format.');
             };
 
@@ -1802,7 +1653,7 @@
                 lastScrollY = window.scrollY;
             });
 
-            // Enhanced intersection observer for animations
+            // Intersection observer for animations
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -1817,7 +1668,7 @@
             }, observerOptions);
 
             // Observe all animation elements
-            const animationElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            const animationElements = document.querySelectorAll('.fade-in');
             animationElements.forEach(el => observer.observe(el));
 
             // Initialize home page animations
@@ -1933,7 +1784,7 @@
                 }
             });
 
-            // Add professional typing effect to hero title (optional enhancement)
+            // Professional typing effect for hero title
             const heroTitle = document.querySelector('.hero-title');
             if (heroTitle) {
                 const originalText = heroTitle.textContent;
@@ -1951,6 +1802,9 @@
                     typeWriter();
                 }, 1000);
             }
+
+            // Initialize scroll spy on page load
+            updateActiveNav();
         });
 
         // Additional utility functions for enhanced UX
@@ -1963,34 +1817,19 @@
 
         // Performance optimization: Lazy load heavy elements
         const lazyElements = document.querySelectorAll('[data-lazy]');
-        const lazyObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    // Load heavy content here if needed
-                    lazyObserver.unobserve(element);
-                }
+        if (lazyElements.length > 0) {
+            const lazyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        // Load heavy content here if needed
+                        lazyObserver.unobserve(element);
+                    }
+                });
             });
-        });
 
-        lazyElements.forEach(el => lazyObserver.observe(el));
-
-        // Add professional loading state for form submissions
-        function showLoadingState(button) {
-            const originalHTML = button.innerHTML;
-            button.innerHTML = '<span style="display: inline-flex; align-items: center; gap: 10px;">Sending... <div style="width: 20px; height: 20px; border: 2px solid #ffffff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div></span>';
-            return originalHTML;
+            lazyElements.forEach(el => lazyObserver.observe(el));
         }
-
-        // Add CSS for spinner animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
