@@ -1670,24 +1670,12 @@
                         <div class="modal-body">
                             <p style="color: var(--text-gray); margin-bottom: 20px;">Please complete the security verification to download the curriculum:</p>
                             <form id="cvForm">
-							    <div class="form-group">
-                                    <label for="cv-name">Name *</label>
-                                    <input type="text" id="cv-name" name="cv-name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cv-email">Email *</label>
-                                    <input type="email" id="cv-email" name="cv-email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cv-company">Company / Organization</label>
-                                    <input type="text" id="cv-company" name="cv-company" placeholder="Optional">
-                                </div>
                                 <div class="captcha-container">
                                     <div class="captcha-question" id="captcha-question">What is 5 + 3?</div>
                                     <input type="number" id="captcha-answer" class="captcha-input" placeholder="?" required>
                                     <button type="button" class="captcha-refresh" onclick="generateCaptcha()">🔄 New Question</button>
                                 </div>
-                                <button type="submit" class="submit-btn">Download Curriculum</button>
+                                <button type="submit" class="submit-btn">Verify & Download Curriculum</button>
                             </form>
                         </div>
                     </div>
@@ -1905,7 +1893,6 @@
                 
                 const formData = new FormData(cvForm);
                 const data = Object.fromEntries(formData);
-				data['captcha-answer'] = cvForm.getElementById('captcha-answer').value
                 
                 // Only validate CAPTCHA - no other required fields
                 if (!data['captcha-answer']) {
@@ -1937,7 +1924,7 @@
                     // Attempt to download - if file doesn't exist, show appropriate message
                     link.onclick = function() {
                         setTimeout(() => {
-                            alert('Thank you, the download has been initiated. If the download doesn\'t start automatically, please contact me directly.');
+                            alert('Thank you! Your curriculum download has been initiated. If the download doesn\'t start automatically, please contact me directly.');
                         }, 500);
                     };
                     
