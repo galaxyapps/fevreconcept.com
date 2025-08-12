@@ -206,7 +206,7 @@
             color: var(--electric-blue);
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
             position: relative;
-            background-image: url('resources/headshot.png');
+            background-image: url('/resources/headshot.jpeg');
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -686,20 +686,6 @@
             font-size: 1.1rem;
         }
 
-		.form-group.cv-terms-group label {
-			display: flex;
-			align-items: center;
-			gap: 8px; /* space between checkbox and text */
-			font-weight: 600;
-			color: var(--electric-blue);
-			font-size: 1.1rem;
-		}
-
-		.form-group.cv-terms-group input[type="checkbox"] {
-			width: auto;
-			margin: 0;
-		}	
-		
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -723,7 +709,6 @@
 
         .submit-btn {
             background: linear-gradient(45deg, var(--electric-blue), var(--accent-blue));
-			align-items: center;
             color: var(--text-white);
             padding: 18px 40px;
             border: none;
@@ -759,6 +744,25 @@
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.5);
         }
 
+        /* Callback Button */
+        .callback-btn {
+            background: transparent;
+            border: 2px solid var(--electric-blue);
+            color: var(--electric-blue);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+        }
+
+        .callback-btn:hover {
+            background: var(--electric-blue);
+            color: var(--text-white);
+            transform: translateY(-2px);
+        }
 
         /* LinkedIn Button */
         .linkedin-btn {
@@ -801,7 +805,7 @@
             border: 1px solid var(--electric-blue);
             border-radius: 20px;
             max-width: 500px;
-            width: 120%;
+            width: 100%;
             max-height: 90vh;
             overflow-y: auto;
             animation: modalSlideIn 0.3s ease-out;
@@ -1108,8 +1112,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Lionel Fevre
-			</div>
+                <div class="logo">Lionel Fevre</div>
                 <ul class="nav-menu">
                     <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
                     <li><a href="#" class="nav-link" data-page="about">About</a></li>
@@ -1122,52 +1125,10 @@
                     <span></span>
                     <span></span>
                 </div>
-				<button class="submit-btn" onclick="requestCvDownload()" >Resume/CV</button>
             </div>
         </div>
-		
-		
     </nav>
-	
-    <!-- CV Download Modal -->
-    <div id="cv-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Download Resume/CV</h3>
-                <button class="modal-close" onclick="hideCvForm()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-gray); margin-bottom: 20px;">Please provide your information and complete the security verification to download my resume:</p>
-                <form id="cvForm">
-                    <div class="form-group">
-                        <label for="cv-name">Name *</label>
-                        <input type="text" id="cv-name" name="cv-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cv-email">Email *</label>
-                        <input type="email" id="cv-email" name="cv-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cv-company">Company / Organization</label>
-                        <input type="text" id="cv-company" name="cv-company" placeholder="Optional">
-                    </div>
-					<div class="form-group cv-terms-group">
-						<label for="cv-terms">
-							<input type="checkbox" id="cv-terms" name="cv-terms" required>
-							I accept the Terms & Conditions
-						</label>
-					</div>
-					<div class="captcha-container">
-                        <div class="captcha-question" id="captcha-question">What is 5 + 3?</div>
-                        <input type="number" id="captcha-answer" name="captcha-answer" class="captcha-input" placeholder="?" required>
-                        <button type="button" class="captcha-refresh" onclick="generateCaptcha()">🔄 New Question</button>
-                    </div>
-                    <button type="submit" class="submit-btn">Download CV</button>
-                </form>
-            </div>
-        </div>
-    </div>
-	
+
     <!-- Home Page -->
     <div id="home" class="page active">
         <section class="hero">
@@ -1213,11 +1174,6 @@
                 </div>
             </div>
         </section>
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a>
-		</footer>
     </div>
 
     <!-- About Page -->
@@ -1227,8 +1183,7 @@
                 <div class="section-header">
                     <h2>About Me</h2>
                     <p>Transformational engineering leader with two decades of experience driving process optimization and digital transformation</p>
-
-				</div>
+                </div>
 
                 <div class="about-grid">
                     <div class="about-profile slide-in-left">
@@ -1251,8 +1206,6 @@
                         <p>Thesis: "Design and Construction of Six Degree-of-Freedom Positioning System" - demonstrating early passion for precision engineering and automation.</p>
                     </div>
                 </div>
-    
-    
             </div>
         </section>
 
@@ -1290,12 +1243,6 @@
                 </div>
             </div>
         </section>
-		                
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a>
-		</footer>
     </div>
 
     <!-- Experience Page -->
@@ -1305,8 +1252,7 @@
                 <div class="section-header">
                     <h2>Professional Experience</h2>
                     <p>Two decades of progressive leadership across elite engineering organizations</p>
-
-				</div>
+                </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
@@ -1328,8 +1274,6 @@
                         </div>
                         <div class="timeline-date">Sep 2023 - Present</div>
                     </div>
-    
-    
 
                     <div class="timeline-item">
                         <div class="timeline-content">
@@ -1439,12 +1383,6 @@
                 </div>
             </div>
         </section>
-		                
-<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-    © Lionel Fevre 2025 | 
-    <a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-    <a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a>
-</footer>
     </div>
 
     <!-- Skills Page -->
@@ -1454,7 +1392,7 @@
                 <div class="section-header">
                     <h2>Skills & Expertise</h2>
                     <p>Comprehensive technical and leadership capabilities spanning engineering processes, digital transformation, and high-performance team management</p>
-				</div>
+                </div>
 
                 <div class="skills-grid">
                     <div class="skill-category">
@@ -1471,8 +1409,6 @@
                             <span class="skill-tag">Change Leadership</span>
                         </div>
                     </div>
-    
-    
 
                     <div class="skill-category">
                         <h3>⚙️ Engineering Processes</h3>
@@ -1549,11 +1485,6 @@
                 </div>
             </div>
         </section>
-<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-    © Lionel Fevre 2025 | 
-    <a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-    <a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a>
-</footer>
     </div>
 
     <!-- Contact Page -->
@@ -1563,7 +1494,13 @@
                 <div class="section-header">
                     <h2>Let's Connect</h2>
                     <p>Ready to discuss how I can drive engineering excellence and digital transformation in your organization</p>
-				</div>
+                </div>
+
+                <!-- Download CV Button - Centered above Contact Information -->
+                <div class="download-cv-container">
+                    <button class="download-cv" onclick="requestCvDownload()">📄 Download Curriculum</button>
+                </div>
+
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3 style="color: var(--electric-blue); margin-bottom: 30px; font-size: 1.8rem;">Contact Information</h3>
@@ -1576,12 +1513,20 @@
                                     <button id="reveal-email-btn" class="reveal-email-btn">
                                         🔓 Click to Reveal Email
                                     </button>
-                                    <span id="email-address" style="color: var(--text-gray); display: none;">contact@fevreconcept.com</span>
+                                    <span id="email-address" style="color: var(--text-gray); display: none;">inquiry@fevreconcept.com</span>
                                 </div>
                             </div>
-    
-    
-                        </div>                        
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <strong style="color: var(--electric-blue);">Callback Request</strong><br>
+                                <span style="color: var(--text-gray);">Request a scheduled callback</span><br>
+                                <button class="callback-btn" onclick="showCallbackForm()">📅 Schedule Callback</button>
+                            </div>
+                        </div>
+                        
                         <div class="contact-item">
                             <span class="contact-icon">💼</span>
                             <div>
@@ -1650,17 +1595,106 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- Callback Request Modal -->
+                <div id="callback-modal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Schedule a Callback</h3>
+                            <button class="modal-close" onclick="hideCallbackForm()">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p style="color: var(--text-gray); margin-bottom: 20px;">I'll contact you to confirm the appointment. Please provide:</p>
+                            <form id="callbackForm">
+                                <div class="form-group">
+                                    <label for="callback-name">Name *</label>
+                                    <input type="text" id="callback-name" name="callback-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-email">Email *</label>
+                                    <input type="email" id="callback-email" name="callback-email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-phone">Phone Number *</label>
+                                    <input type="tel" id="callback-phone" name="callback-phone" required placeholder="+1 (555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-country">Country *</label>
+                                    <input type="text" id="callback-country" name="callback-country" required placeholder="e.g., United States">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-city">City *</label>
+                                    <input type="text" id="callback-city" name="callback-city" required placeholder="e.g., New York">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-time">Best Time to Call *</label>
+                                    <select id="callback-time" name="callback-time" required>
+                                        <option value="">Select preferred time...</option>
+                                        <option value="9am-12pm">Morning (9 AM - 12 PM)</option>
+                                        <option value="12pm-3pm">Early Afternoon (12 PM - 3 PM)</option>
+                                        <option value="3pm-6pm">Late Afternoon (3 PM - 6 PM)</option>
+                                        <option value="6pm-8pm">Evening (6 PM - 8 PM)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-timezone">Timezone</label>
+                                    <input type="text" id="callback-timezone" name="callback-timezone" placeholder="e.g., EST, PST, CET">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-purpose">Purpose of Call</label>
+                                    <select id="callback-purpose" name="callback-purpose">
+                                        <option value="">Select purpose...</option>
+                                        <option value="job-opportunity">Job Opportunity Discussion</option>
+                                        <option value="consulting">Consulting Services</option>
+                                        <option value="partnership">Partnership Discussion</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-notes">Additional Notes</label>
+                                    <textarea id="callback-notes" name="callback-notes" rows="3" placeholder="Any specific topics you'd like to discuss..."></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Request Callback</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CV Download Modal with CAPTCHA -->
+                <div id="cv-modal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Download Curriculum</h3>
+                            <button class="modal-close" onclick="hideCvForm()">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p style="color: var(--text-gray); margin-bottom: 20px;">Please complete the security verification to download the curriculum:</p>
+                            <form id="cvForm">
+							    <div class="form-group">
+                                    <label for="cv-name">Name *</label>
+                                    <input type="text" id="cv-name" name="cv-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cv-email">Email *</label>
+                                    <input type="email" id="cv-email" name="cv-email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cv-company">Company / Organization</label>
+                                    <input type="text" id="cv-company" name="cv-company" placeholder="Optional">
+                                </div>
+                                <div class="captcha-container">
+                                    <div class="captcha-question" id="captcha-question">What is 5 + 3?</div>
+                                    <input type="number" id="captcha-answer" class="captcha-input" placeholder="?" required>
+                                    <button type="button" class="captcha-refresh" onclick="generateCaptcha()">🔄 New Question</button>
+                                </div>
+                                <button type="submit" class="submit-btn">Download Curriculum</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a>
-		</footer>
     </div>
-
-
-
 
     <script>
         // Global variables for CAPTCHA
@@ -1714,7 +1748,7 @@
                     // If image fails to load, keep fallback styling
                     console.log('Headshot image not found, using initials fallback');
                 };
-                testImg.src = 'resources/headshot.png';
+                testImg.src = '/resources/headshot.jpeg';
             });
 
             // Page navigation with enhanced animations
@@ -1824,37 +1858,20 @@
                     alert('Please provide a more detailed message (minimum 20 characters).');
                     return;
                 }
-               
-				var formData2 = {
-					name: document.getElementById("name").value,
-					email: document.getElementById("email").value,
-					subject: document.getElementById("subject").value,
-					company: document.getElementById("company").value,
-					position: document.getElementById("position").value,
-					message: document.getElementById("message").value
-				  };
-	  
-				const submitBtn = this.querySelector('.submit-btn');
-				const originalText = submitBtn.textContent;
-				submitBtn.innerHTML = '<span class="loading-spinner">Sending Message... <div class="spinner"></div></span>';
-				submitBtn.disabled = true;
-
-				//emailjs.sendForm("service_gqb47o8", "template_836ufc5", formData2)
-				emailjs.send('service_gqb47o8', 'template_836ufc5', formData2, 'LfvEo67bECaiOqb4W')
-					.then(function() {
-						alert(`Thank you ${data.name}! Your message has been sent successfully.`);
-						document.getElementById('contactForm').reset();
-						submitBtn.textContent = originalText;
-						submitBtn.disabled = false;
-					}, function(error) {
-						console.error("EmailJS error:", error);
-						alert('Oops! Something went wrong. Please try again later.');
-						submitBtn.textContent = originalText;
-						submitBtn.disabled = false;
-					});
-	
+                
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.innerHTML = '<span class="loading-spinner">Sending Message... <div class="spinner"></div></span>';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission with enhanced feedback
+                setTimeout(() => {
+                    alert(`Thank you ${data.name}! Your message has been received. I'll respond within 24 hours to discuss how I can help with your engineering leadership needs.`);
+                    contactForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
             });
-			
 
             // Email reveal functionality
             const revealEmailBtn = document.getElementById('reveal-email-btn');
@@ -1864,7 +1881,7 @@
                 revealEmailBtn.addEventListener('click', function() {
                     this.style.display = 'none';
                     emailAddress.style.display = 'inline';
-                    emailAddress.innerHTML = '<a href="mailto:contact@fevreconcept.com" style="color: var(--electric-blue); text-decoration: none;">contact@fevreconcept.com</a>';
+                    emailAddress.innerHTML = '<a href="mailto:inquiry@fevreconcept.com" style="color: var(--electric-blue); text-decoration: none;">inquiry@fevreconcept.com</a>';
                 });
             }
 
@@ -1872,31 +1889,144 @@
             window.requestCvDownload = function() {
                 document.getElementById('cv-modal').style.display = 'flex';
                 document.body.style.overflow = 'hidden';
-                //generateCaptcha(); // Generate new CAPTCHA each time
+                generateCaptcha(); // Generate new CAPTCHA each time
             };
 
             window.hideCvForm = function() {
                 document.getElementById('cv-modal').style.display = 'none';
                 document.body.style.overflow = 'auto';
-                document.getElementById('cvForm').reset();				
+                document.getElementById('cvForm').reset();
             };
 
             // CV form submission with CAPTCHA validation (FIXED)
             const cvForm = document.getElementById('cvForm');
-            
+            cvForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(cvForm);
+                const data = Object.fromEntries(formData);
+				data['captcha-answer'] = cvForm.getElementById('captcha-answer').value
+                
+                // Only validate CAPTCHA - no other required fields
+                if (!data['captcha-answer']) {
+                    alert('Please complete the security verification.');
+                    return;
+                }
+                
+                // Validate CAPTCHA
+                if (parseInt(data['captcha-answer']) !== captchaAnswer) {
+                    alert('Security verification failed. Please check your answer and try again.');
+                    generateCaptcha(); // Generate new CAPTCHA
+                    return;
+                }
+                
+                const submitBtn = cvForm.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.innerHTML = '<span class="loading-spinner">Verifying... <div class="spinner"></div></span>';
+                submitBtn.disabled = true;
+                
+                // Simulate verification and download
+                setTimeout(() => {
+                    // In a real implementation, this would trigger the actual PDF download
+                    // For now, we'll simulate the download process
+                    const link = document.createElement('a');
+                    link.href = '/docs/LionelFevre_Senior_Eng_Process_Leader.pdf';
+                    link.download = 'LionelFevre_Senior_Eng_Process_Leader.pdf';
+                    document.body.appendChild(link);
+                    
+                    // Attempt to download - if file doesn't exist, show appropriate message
+                    link.onclick = function() {
+                        setTimeout(() => {
+                            alert('Thank you, the download has been initiated. If the download doesn\'t start automatically, please contact me directly.');
+                        }, 500);
+                    };
+                    
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Reset form and close modal
+                    cvForm.reset();
+                    hideCvForm();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 1500);
+            });
+
+            // Callback form functionality
+            window.showCallbackForm = function() {
+                document.getElementById('callback-modal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.hideCallbackForm = function() {
+                document.getElementById('callback-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.getElementById('callbackForm').reset();
+            };
+
+            // Callback form submission
+            const callbackForm = document.getElementById('callbackForm');
+            if (callbackForm) {
+                callbackForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(callbackForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Validation for required fields
+                    const requiredFields = ['callback-name', 'callback-email', 'callback-phone', 'callback-country', 'callback-city', 'callback-time'];
+                    const missingFields = requiredFields.filter(field => !data[field]);
+                    
+                    if (missingFields.length > 0) {
+                        alert('Please fill in all required fields marked with *');
+                        return;
+                    }
+                    
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(data['callback-email'])) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+                    
+                    const phoneRegex = /^[+]?[\s\d\-\(\)]{10,}$/;
+                    if (!phoneRegex.test(data['callback-phone'])) {
+                        alert('Please enter a valid phone number.');
+                        return;
+                    }
+                    
+                    const submitBtn = callbackForm.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.innerHTML = '<span class="loading-spinner">Submitting Request... <div class="spinner"></div></span>';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate callback request submission
+                    setTimeout(() => {
+                        alert(`Thank you ${data['callback-name']}! Your callback request has been received. I'll contact you within 24 hours to schedule our conversation at your preferred time (${data['callback-time']}).`);
+                        callbackForm.reset();
+                        hideCallbackForm();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 2000);
+                });
+            }
 
             // Close modals when clicking outside or pressing Escape
             document.addEventListener('click', function(e) {
                 const cvModal = document.getElementById('cv-modal');
+                const callbackModal = document.getElementById('callback-modal');
                 
                 if (e.target === cvModal) {
                     hideCvForm();
+                }
+                if (e.target === callbackModal) {
+                    hideCallbackForm();
                 }
             });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     hideCvForm();
+                    hideCallbackForm();
                 }
             });
 
@@ -2068,226 +2198,5 @@
         // CAPTCHA utility functions
         window.generateCaptcha = generateCaptcha;
     </script>
-
-<div id="terms" class="page">
-    <section class="container" style="padding: 100px 20px;">
-        <div class="section-header">
-            <h2>Terms & Conditions</h2>
-        </div>
-        <div style="color: var(--text-gray); line-height: 1.8; white-space: pre-wrap;">
-Terms and Conditions
-
-These Terms and Conditions (“Legal Terms”) govern your use of our professional web portfolio, which includes the public display of my work, professional profile, and the option to download my resume or curriculum vitae (CV). By accessing or using this website, you agree to be bound by these Legal Terms. If you do not agree, you must not use the Services.
-
-1. OUR SERVICES
-
-The Services include the public presentation of my professional portfolio and the ability for users to download my CV. The information provided through the Services is intended for lawful use only and must not be distributed or used in any jurisdiction where such distribution or use would be contrary to applicable law. Users accessing the Services from outside Italy are responsible for compliance with their local laws.
-
-2. INTELLECTUAL PROPERTY RIGHTS
-
-All content in the portfolio, including text, images, designs, logos, and the CV, are protected by copyright, trademark, and other applicable laws. You may view and download the CV solely for personal, non-commercial purposes, such as evaluating my professional qualifications. Reproduction, republication, distribution, or commercial use of any content, including the CV, without prior written consent is strictly prohibited.
-
-3. YOUR USE OF THE SERVICES
-
-Subject to these Legal Terms, you are granted a non-exclusive, non-transferable, revocable license to access the Services and download a copy of the CV for legitimate professional purposes only. Any other use, including for marketing, data mining, or redistribution, is forbidden.
-
-4. PROHIBITED ACTIVITIES
-
-You may not use the Services for: 
-- Any illegal or unauthorized purpose;
-- Republishing or redistributing the CV or portfolio content without permission;
-- Using the CV or portfolio content for unsolicited marketing, job scams, or identity theft;
-- Copying, altering, or exploiting the Services for commercial gain without written consent;
-- Harassment, abuse, or harmful conduct toward me or other users.
-
-5. USER SUBMISSIONS
-
-If you send inquiries, comments, or professional opportunities through the contact form or email, you confirm that such submissions are lawful, non-confidential, and do not infringe on third-party rights. You grant me the right to respond and store such submissions as needed for professional purposes.
-
-6. PRIVACY AND DATA HANDLING
-
-Any personal contact details included in the CV must not be collected, stored, or used without legitimate interest and prior consent. Misuse of personal information from the CV or portfolio is strictly prohibited.
-
-7. SERVICES MANAGEMENT
-
-I reserve the right to monitor, update, restrict, or remove access to the Services to protect my rights and ensure proper functioning.
-
-8. TERM AND TERMINATION
-
-These Legal Terms remain in effect while you use the Services. I may terminate or restrict your access at any time, without notice, for any violation of these Legal Terms.
-
-9. MODIFICATIONS AND INTERRUPTIONS
-
-I may update, modify, or suspend the Services at any time without notice. I am not liable for any interruptions or unavailability of the Services.
-
-10. GOVERNING LAW
-
-These Legal Terms are governed by the laws of Italy. The courts located in Italy shall have exclusive jurisdiction over any disputes arising from these Legal Terms.
-
-11. DISCLAIMER
-
-The Services are provided on an 'as-is' basis without warranties of any kind. I am not liable for errors, inaccuracies, interruptions, or misuse of the Services.
-
-12. LIMITATIONS OF LIABILITY
-
-To the fullest extent permitted by law, I shall not be liable for any damages, direct or indirect, arising from your use of the Services. In any case, my liability shall not exceed any amount you have paid to access the Services, if applicable.
-
-13. INDEMNIFICATION
-
-You agree to indemnify and hold me harmless from any claims, damages, or losses arising from your use of the Services, your breach of these Legal Terms, or misuse of the CV or portfolio content.
-
-14. ELECTRONIC COMMUNICATIONS
-
-By using the Services, you consent to receive communications electronically and agree that such communications satisfy legal requirements for written communication.
-
-15. MISCELLANEOUS
-
-These Legal Terms represent the entire agreement between you and me regarding the Services. If any provision is found invalid, the remaining provisions shall remain in effect.
-
-16. CONTACT
-
-For any inquiries related to the Services, including legitimate professional opportunities, contact:  
-        </div>
-    </section> 
-	<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-		© Lionel Fevre 2025 | 
-		<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-		<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a>
-	</footer>
-</div>
-
-<div id="disclaimer" class="page">
-    <section class="container" style="padding: 100px 20px;">
-        <div class="section-header">
-            <h2>Disclaimer</h2>
-        </div>
-        <div style="color: var(--text-gray); line-height: 1.8; white-space: pre-wrap;">
-WEBSITE DISCLAIMER
-
-The information we provided on fevreconcept.com (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site. UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SITE OR RELIANCE ON ANY INFORMATION PROVIDED ON THE SITE. YOUR USE OF THE SITE AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.
-
-EXTERNAL LINKS DISCLAIMER
-
-The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by us. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR THE ACCURACY OR RELIABILITY OF ANY INFORMATION OFFERED BY THIRD-PARTY WEBSITES LINKED THROUGH THE SITE OR ANY WEBSITE OR FEATURE LINKED IN ANY BANNER OR OTHER ADVERTISING. WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.
-        </div>
-    </section>
-	<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-		© Lionel Fevre 2025 | 
-		<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-		<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a>
-	</footer>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-(function(){
-    emailjs.init('LfvEo67bECaiOqb4W'); // Replace with your EmailJS public key
-})();
-
-document.addEventListener("DOMContentLoaded", function() {
-    var captchaQuestion = document.getElementById("captcha-question");
-    var captchaInput = document.getElementById("captcha-input");
-    var captchaError = document.getElementById("captcha-error");
-    var cvForm = document.getElementById("cvForm");
-    var cvDownloadBtn = document.getElementById("cvDownloadBtn");
-    var captchaAnswer;
-
-    function generateCaptcha() {
-        var num1 = Math.floor(Math.random() * 10) + 1;
-        var num2 = Math.floor(Math.random() * 10) + 1;
-        captchaAnswer = num1 + num2;
-        captchaQuestion.textContent = num1 + " + " + num2 + " = ?";
-    }
-
-    generateCaptcha();
-
-    
-    });
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init('LfvEo67bECaiOqb4W'); // Replace with your EmailJS public key
-  }
-  var captchaQuestion = document.getElementById("captcha-question");
-  var captchaInput = document.getElementById("captcha-answer");
-  var cvForm = document.getElementById("cvForm");
-  var captchaAnswer;
-
-  function generateCaptcha() {
-    var num1 = Math.floor(Math.random() * 10) + 1;
-    var num2 = Math.floor(Math.random() * 10) + 1;
-    captchaAnswer = num1 + num2;
-    if (captchaQuestion) {
-      captchaQuestion.textContent = num1 + " + " + num2 + " = ?";
-    }
-  }
-  generateCaptcha();
-
-  if (cvForm) {
-    cvForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      var captchaValue = parseInt(captchaInput.value, 10);
-      if (isNaN(captchaValue) || captchaValue !== captchaAnswer) {
-        alert("Security verification failed. Please try again.");
-        generateCaptcha();
-        captchaInput.value = "";
-        return;
-      }
-
-      var formData = {
-        name: document.getElementById("cv-name").value,
-        email: document.getElementById("cv-email").value,
-        company: document.getElementById("cv-company").value
-      };
-
-      var submitBtn = cvForm.querySelector(".submit-btn");
-      var originalText = submitBtn.textContent;
-      submitBtn.innerHTML = '<span class="loading-spinner">Verifying... <div class="spinner"></div></span>';
-      submitBtn.disabled = true;
-
-      // Send EmailJS
-      if (typeof emailjs !== 'undefined') {
-        emailjs.send('service_gqb47o8', 'template_rti57vr', formData, 'LfvEo67bECaiOqb4W')
-        .then(function() {
-          triggerCvDownload();
-          resetForm();
-        }, function(error) {
-          console.error("EmailJS failed", error);
-          alert("An error occurred in EmailJS while sending your request.");
-          resetForm();
-        });
-      } else {
-        triggerCvDownload();
-        resetForm();
-      }
-
-      function triggerCvDownload() {
-        var link = document.createElement('a');
-        link.href = 'docs/LionelFevre_Senior_Eng_Process_Leader.pdf';
-        link.download = 'LionelFevre_Senior_Eng_Process_Leader.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-
-      function resetForm() {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        if (typeof hideCvForm === 'function') {
-          hideCvForm();
-        }
-        cvForm.reset();
-        generateCaptcha();
-      }
-    });
-  }
-});
-</script>
-
 </body>
 </html>

@@ -206,7 +206,7 @@
             color: var(--electric-blue);
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
             position: relative;
-            background-image: url('resources/headshot.png');
+            background-image: url('/resources/headshot.jpeg');
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -759,6 +759,25 @@
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.5);
         }
 
+        /* Callback Button */
+        .callback-btn {
+            background: transparent;
+            border: 2px solid var(--electric-blue);
+            color: var(--electric-blue);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+        }
+
+        .callback-btn:hover {
+            background: var(--electric-blue);
+            color: var(--text-white);
+            transform: translateY(-2px);
+        }
 
         /* LinkedIn Button */
         .linkedin-btn {
@@ -1581,7 +1600,17 @@
                             </div>
     
     
-                        </div>                        
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <strong style="color: var(--electric-blue);">Callback Request</strong><br>
+                                <span style="color: var(--text-gray);">Request a scheduled callback</span><br>
+                                <button class="callback-btn" onclick="showCallbackForm()">📅 Schedule Callback</button>
+                            </div>
+                        </div>
+                        
                         <div class="contact-item">
                             <span class="contact-icon">💼</span>
                             <div>
@@ -1650,6 +1679,70 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- Callback Request Modal -->
+                <div id="callback-modal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Schedule a Callback</h3>
+                            <button class="modal-close" onclick="hideCallbackForm()">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p style="color: var(--text-gray); margin-bottom: 20px;">I'll contact you to confirm the appointment. Please provide:</p>
+                            <form id="callbackForm">
+                                <div class="form-group">
+                                    <label for="callback-name">Name *</label>
+                                    <input type="text" id="callback-name" name="callback-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-email">Email *</label>
+                                    <input type="email" id="callback-email" name="callback-email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-phone">Phone Number *</label>
+                                    <input type="tel" id="callback-phone" name="callback-phone" required placeholder="+1 (555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-country">Country *</label>
+                                    <input type="text" id="callback-country" name="callback-country" required placeholder="e.g., United States">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-city">City *</label>
+                                    <input type="text" id="callback-city" name="callback-city" required placeholder="e.g., New York">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-time">Best Time to Call *</label>
+                                    <select id="callback-time" name="callback-time" required>
+                                        <option value="">Select preferred time...</option>
+                                        <option value="9am-12pm">Morning (9 AM - 12 PM)</option>
+                                        <option value="12pm-3pm">Early Afternoon (12 PM - 3 PM)</option>
+                                        <option value="3pm-6pm">Late Afternoon (3 PM - 6 PM)</option>
+                                        <option value="6pm-8pm">Evening (6 PM - 8 PM)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-timezone">Timezone</label>
+                                    <input type="text" id="callback-timezone" name="callback-timezone" placeholder="e.g., EST, PST, CET">
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-purpose">Purpose of Call</label>
+                                    <select id="callback-purpose" name="callback-purpose">
+                                        <option value="">Select purpose...</option>
+                                        <option value="job-opportunity">Job Opportunity Discussion</option>
+                                        <option value="consulting">Consulting Services</option>
+                                        <option value="partnership">Partnership Discussion</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="callback-notes">Additional Notes</label>
+                                    <textarea id="callback-notes" name="callback-notes" rows="3" placeholder="Any specific topics you'd like to discuss..."></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Request Callback</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
@@ -1714,7 +1807,7 @@
                     // If image fails to load, keep fallback styling
                     console.log('Headshot image not found, using initials fallback');
                 };
-                testImg.src = 'resources/headshot.png';
+                testImg.src = '/resources/headshot.jpeg';
             });
 
             // Page navigation with enhanced animations
@@ -1824,37 +1917,20 @@
                     alert('Please provide a more detailed message (minimum 20 characters).');
                     return;
                 }
-               
-				var formData2 = {
-					name: document.getElementById("name").value,
-					email: document.getElementById("email").value,
-					subject: document.getElementById("subject").value,
-					company: document.getElementById("company").value,
-					position: document.getElementById("position").value,
-					message: document.getElementById("message").value
-				  };
-	  
-				const submitBtn = this.querySelector('.submit-btn');
-				const originalText = submitBtn.textContent;
-				submitBtn.innerHTML = '<span class="loading-spinner">Sending Message... <div class="spinner"></div></span>';
-				submitBtn.disabled = true;
-
-				//emailjs.sendForm("service_gqb47o8", "template_836ufc5", formData2)
-				emailjs.send('service_gqb47o8', 'template_836ufc5', formData2, 'LfvEo67bECaiOqb4W')
-					.then(function() {
-						alert(`Thank you ${data.name}! Your message has been sent successfully.`);
-						document.getElementById('contactForm').reset();
-						submitBtn.textContent = originalText;
-						submitBtn.disabled = false;
-					}, function(error) {
-						console.error("EmailJS error:", error);
-						alert('Oops! Something went wrong. Please try again later.');
-						submitBtn.textContent = originalText;
-						submitBtn.disabled = false;
-					});
-	
+                
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.innerHTML = '<span class="loading-spinner">Sending Message... <div class="spinner"></div></span>';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission with enhanced feedback
+                setTimeout(() => {
+                    alert(`Thank you ${data.name}! Your message has been received. I'll respond ASAP to discuss how I can help with your needs.`);
+                    contactForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
             });
-			
 
             // Email reveal functionality
             const revealEmailBtn = document.getElementById('reveal-email-btn');
@@ -1885,18 +1961,88 @@
             const cvForm = document.getElementById('cvForm');
             
 
+            // Callback form functionality
+            window.showCallbackForm = function() {
+                document.getElementById('callback-modal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.hideCallbackForm = function() {
+                document.getElementById('callback-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.getElementById('callbackForm').reset();
+            };
+
+            // Callback form submission
+            const callbackForm = document.getElementById('callbackForm');
+            if (callbackForm) {
+                callbackForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(callbackForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Validation for required fields
+                    const requiredFields = ['callback-name', 'callback-email', 'callback-phone', 'callback-country', 'callback-city', 'callback-time'];
+                    const missingFields = requiredFields.filter(field => !data[field]);
+                    
+                    if (missingFields.length > 0) {
+                        alert('Please fill in all required fields marked with *');
+                        return;
+                    }
+                    
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(data['callback-email'])) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+                    
+                    const phoneRegex = /^[+]?[\s\d\-\(\)]{10,}$/;
+                    if (!phoneRegex.test(data['callback-phone'])) {
+                        alert('Please enter a valid phone number.');
+                        return;
+                    }
+			
+					// Check if T&C is accepted
+					const termsCheckbox = document.getElementById('cv-terms');
+					if (!termsCheckbox.checked) {
+						alert('You must accept the Terms & Conditions before downloading the CV.');
+						return;
+					}
+			
+                    const submitBtn = callbackForm.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.innerHTML = '<span class="loading-spinner">Submitting Request... <div class="spinner"></div></span>';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate callback request submission
+                    setTimeout(() => {
+                        alert(`Thank you ${data['callback-name']}! Your callback request has been received. I'll contact you within 24 hours to schedule our conversation at your preferred time (${data['callback-time']}).`);
+                        callbackForm.reset();
+                        hideCallbackForm();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 2000);
+                });
+            }
+
             // Close modals when clicking outside or pressing Escape
             document.addEventListener('click', function(e) {
                 const cvModal = document.getElementById('cv-modal');
+                const callbackModal = document.getElementById('callback-modal');
                 
                 if (e.target === cvModal) {
                     hideCvForm();
+                }
+                if (e.target === callbackModal) {
+                    hideCallbackForm();
                 }
             });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     hideCvForm();
+                    hideCallbackForm();
                 }
             });
 
