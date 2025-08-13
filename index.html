@@ -1160,7 +1160,7 @@
     <div id="cv-modal" class="modal" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Download Resume/CV</h3>
+                <h3>Receive Resume/CV</h3>
                 <button class="modal-close" onclick="hideCvForm()">&times;</button>
             </div>
             <div class="modal-body">
@@ -1189,7 +1189,7 @@
                         <input type="number" id="captcha-answer" name="captcha-answer" class="captcha-input" placeholder="?" required>
                         <button type="button" class="captcha-refresh" onclick="generateCaptcha()">🔄 New Question</button>
                     </div>
-                    <button type="submit" class="submit-btn">Download CV</button>
+                    <button type="submit" class="submit-btn">Send Request</button>
                 </form>
             </div>
         </div>
@@ -2291,27 +2291,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Send EmailJS
       if (typeof emailjs !== 'undefined') {
-        emailjs.send('service_gqb47o8', 'template_rti57vr', formData, 'LfvEo67bECaiOqb4W')
+        emailjs.send('service_c5tnuwa', 'template_rti57vr', formData, 'LfvEo67bECaiOqb4W')
         .then(function() {
-          triggerCvDownload();
+        alert("An email has just been sent with the link to download my CV.");
           resetForm();
         }, function(error) {
           console.error("EmailJS failed", error);
-          alert("An error occurred in EmailJS while sending your request.");
+          alert("An error occurred while sending your request.");
           resetForm();
         });
       } else {
-        triggerCvDownload();
         resetForm();
-      }
-
-      function triggerCvDownload() {
-        var link = document.createElement('a');
-        link.href = 'docs/LionelFevre_Senior_Eng_Process_Leader.pdf';
-        link.download = 'LionelFevre_Senior_Eng_Process_Leader.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
       }
 
       function resetForm() {
