@@ -231,8 +231,8 @@
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 350px;
             background: linear-gradient(45deg, var(--carbon-light), var(--carbon-bg));
             border: 3px solid var(--electric-blue);
             border-radius: 50%;
@@ -244,9 +244,10 @@
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
             position: relative;
             background-image: url('resources/headshot.png');
-            background-size: cover;
-            background-position: center;
             overflow: hidden;
+			background-size: 120%;
+			background-repeat: no-repeat;
+			background-position: center 20%;
         }
 
         .profile-image.fallback {
@@ -263,7 +264,7 @@
             background: conic-gradient(var(--electric-blue), var(--accent-blue), var(--electric-blue));
             border-radius: 50%;
             z-index: -1;
-            animation: rotate 3s linear infinite;
+            /*animation: rotate 3s linear infinite;*/
         }
 
         @keyframes rotate {
@@ -425,10 +426,13 @@
         }
 
         .about-profile .profile-image {
-            width: 100%;
-            height: 300px;
+            width: 300px;
+            height: 350px;
             margin-bottom: 30px;
             font-size: 6rem;
+			background-size: 120%;
+			background-repeat: no-repeat;
+			background-position: center 20%;
         }
 
         .about-text h3 {
