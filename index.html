@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBSFNCWSZD"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-BBSFNCWSZD');
-	</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lionel Fevre - Engineering Process Leader | Senior-Level Engineering Management</title>
-    <meta name="description" content="Senior-level Engineering Manager specializing in Process Optimization, Digital Transformation, and Design Efficiency. 20+ years experience from Ferrari® F1 to Bombardier® Aerospace.">
-    <meta name="keywords" content="Engineering Director, Process Optimization, Digital Transformation, F1 Engineering, CAD PLM Leadership, Team Management">
+    <title>Lionel Fèvre — Engineering Processes, PLM &amp; Digital Engineering Leader</title>
+    <meta name="description" content="Engineering hours are finite, and most recoverable waste sits between departments — in un-monitored hand-offs, incompatible data and duplicated effort.">
+    <link rel="canonical" href="https://fevreconcept.com/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lionel Fèvre",
+      "jobTitle": "Engineering Processes, Technical Innovation and Business Efficiency",
+      "description": "Engineering process and data architecture leader. Focuses on the end-to-end design-to-manufacturing process and data architecture that spans departments: CAD/PLM governance, engineering standards and methodology, automation portfolio, materials and mass data continuity, configuration management and regulatory data.",
+      "url": "https://fevreconcept.com/",
+      "sameAs": ["https://www.linkedin.com/in/lionelfevre"],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Florida Institute of Technology"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Maranello",
+        "addressCountry": "IT"
+      },
+      "knowsLanguage": ["fr", "en", "it"],
+      "knowsAbout": [
+        "Process Architecture & Governance",
+        "PLM, CAD & Data Continuity",
+        "Engineering Automation & Tooling",
+        "Regulatory & Compliance Data",
+        "Change Management & Team Leadership",
+        "AI-Enabled Engineering"
+      ]
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -35,6 +54,10 @@
             --text-light-gray: #999999;
             --success-green: #00ff88;
             --warning-orange: #ff6b35;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -65,6 +88,22 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: var(--electric-blue);
+            color: var(--primary-dark);
+            padding: 12px 20px;
+            border-radius: 0 0 10px 0;
+            font-weight: 600;
+            z-index: 2000;
+        }
+
+        .skip-link:focus {
+            left: 0;
         }
 
         /* Navigation - Mobile First Improvements */
@@ -103,13 +142,6 @@
         }
 		
 		@media (max-width: 768px) {
-			.submit-btn {
-				font-size: 1rem;         /* Slightly smaller text */
-				padding: 12px 25px;      /* Reduced padding */
-				width: 80%;              /* Make it easier to tap */
-				margin: 20px auto 0;     /* Center in mobile menu */
-				display: block;
-			}
 			.nav-container {
 				flex-wrap: wrap;         /* Allow wrapping */
 			}
@@ -121,10 +153,6 @@
 			}
 			.logo {
 				font-size: 1.4rem;
-			}
-			.submit-btn {
-				font-size: 0.95rem;
-				padding: 10px 20px;
 			}
 		}
 
@@ -160,6 +188,12 @@
             color: var(--electric-blue);
         }
 
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent-blue);
+            outline-offset: 3px;
+        }
+
         /* Mobile Navigation - Improved */
         .hamburger {
             display: none;
@@ -167,6 +201,9 @@
             cursor: pointer;
             z-index: 1002;
             position: relative;
+            background: none;
+            border: none;
+            padding: 4px;
         }
 
         .hamburger span {
@@ -176,6 +213,7 @@
             margin: 3px 0;
             transition: 0.3s;
             box-shadow: 0 0 5px var(--electric-blue);
+            display: block;
         }
 
         .hamburger.active span:nth-child(1) {
@@ -190,15 +228,13 @@
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
-        /* Pages */
-        .page {
-            display: none;
-            min-height: 100vh;
-            padding-top: 80px;
+        /* Sections */
+        .section-anchor {
+            scroll-margin-top: 100px;
         }
 
-        .page.active {
-            display: block;
+        main {
+            padding-top: 80px;
         }
 
         /* Home Page */
@@ -231,8 +267,8 @@
         }
 
         .profile-image {
-            width: 300px;
-            height: 350px;
+            width: 200px;
+            height: 200px;
             background: linear-gradient(45deg, var(--carbon-light), var(--carbon-bg));
             border: 3px solid var(--electric-blue);
             border-radius: 50%;
@@ -244,10 +280,10 @@
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
             position: relative;
             background-image: url('resources/headshot.png');
+            background-size: cover;
+            background-position: center;
             overflow: hidden;
-			background-size: 120%;
-			background-repeat: no-repeat;
-			background-position: center 20%;
+            flex-shrink: 0;
         }
 
         .profile-image.fallback {
@@ -264,12 +300,17 @@
             background: conic-gradient(var(--electric-blue), var(--accent-blue), var(--electric-blue));
             border-radius: 50%;
             z-index: -1;
-            /*animation: rotate 3s linear infinite;*/
+            animation: rotate 3s linear infinite;
         }
 
         @keyframes rotate {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 760px;
+            text-align: left;
         }
 
         .hero-content h1 {
@@ -286,19 +327,24 @@
             text-shadow: 0 0 10px var(--electric-blue);
         }
 
+        .hero-problem {
+            font-size: 1.35rem;
+            color: var(--text-white);
+            line-height: 1.7;
+            border-left: 4px solid var(--electric-blue);
+            padding-left: 25px;
+            margin-bottom: 2rem;
+        }
+
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             margin-bottom: 3rem;
             color: var(--text-gray);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .cta-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
@@ -404,35 +450,14 @@
             margin: 0 auto;
         }
 
-        /* About Page */
+        /* Prose blocks */
         .about-content {
             padding: 100px 0;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-            align-items: start;
-            margin-bottom: 80px;
-        }
-
-        .about-profile {
-            background: linear-gradient(135deg, var(--carbon-light), var(--carbon-bg));
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--electric-blue);
-            text-align: center;
-        }
-
-        .about-profile .profile-image {
-            width: 300px;
-            height: 350px;
-            margin-bottom: 30px;
-            font-size: 6rem;
-			background-size: 120%;
-			background-repeat: no-repeat;
-			background-position: center 20%;
+        .about-text {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .about-text h3 {
@@ -446,6 +471,12 @@
             font-size: 1.2rem;
             color: var(--text-gray);
             line-height: 1.8;
+        }
+
+        .about-text p.lead-out {
+            color: var(--text-white);
+            border-left: 4px solid var(--electric-blue);
+            padding-left: 25px;
         }
 
         .achievements-section {
@@ -473,13 +504,25 @@
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
         }
 
-        .achievement-card h4 {
+        .achievement-card h3 {
             color: var(--electric-blue);
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
 
-        /* Experience Page */
+        .achievement-card p {
+            color: var(--text-gray);
+        }
+
+        .achievement-card .card-meta {
+            display: block;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Experience */
         .experience-content {
             padding: 100px 0;
         }
@@ -561,9 +604,10 @@
         }
 
         .role-description {
-            color: var(--text-gray);
+            color: var(--text-light-gray);
             margin-bottom: 20px;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            font-style: italic;
         }
 
         .achievements {
@@ -585,7 +629,7 @@
             font-size: 1.2rem;
         }
 
-        /* Skills Page */
+        /* Skills */
         .skills-content {
             padding: 100px 0;
         }
@@ -621,6 +665,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
+            list-style: none;
         }
 
         .skill-tag {
@@ -641,16 +686,9 @@
             box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
         }
 
-        /* Contact Page */
+        /* Contact */
         .contact-content {
             padding: 100px 0;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            margin-top: 60px;
         }
 
         .contact-info {
@@ -658,6 +696,8 @@
             padding: 50px;
             border-radius: 20px;
             border: 1px solid var(--electric-blue);
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .contact-item {
@@ -681,125 +721,28 @@
             margin-right: 20px;
             width: 40px;
             text-align: center;
+            flex-shrink: 0;
         }
 
-        .download-cv {
-            background: linear-gradient(45deg, var(--electric-blue), var(--accent-blue));
-            color: var(--text-white);
-            padding: 20px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
-            cursor: pointer;
-            border: none;
+        .contact-label {
+            color: var(--electric-blue);
+            font-weight: 700;
         }
 
-        .download-cv:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        .contact-value {
+            color: var(--text-gray);
         }
 
-        .download-cv-container {
+        .contact-cta {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .contact-form {
-            background: linear-gradient(135deg, var(--carbon-light), var(--carbon-bg));
-            padding: 50px;
-            border-radius: 20px;
-            border: 1px solid var(--electric-blue);
+        .contact-cta p {
+            color: var(--text-gray);
+            margin-top: 15px;
+            font-size: 1.05rem;
         }
-
-        .form-group {
-            margin-bottom: 30px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--electric-blue);
-            font-size: 1.1rem;
-        }
-
-		.form-group.cv-terms-group label {
-			display: flex;
-			align-items: center;
-			gap: 8px; /* space between checkbox and text */
-			font-weight: 600;
-			color: var(--electric-blue);
-			font-size: 1.1rem;
-		}
-
-		.form-group.cv-terms-group input[type="checkbox"] {
-			width: auto;
-			margin: 0;
-		}	
-		
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 15px 20px;
-            background: var(--primary-dark);
-            border: 2px solid var(--electric-blue);
-            border-radius: 10px;
-            color: var(--text-white);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, var(--electric-blue), var(--accent-blue));
-			align-items: center;
-            color: var(--text-white);
-            padding: 18px 40px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
-        }
-
-        /* Email Reveal Button */
-        .reveal-email-btn {
-            background: linear-gradient(45deg, var(--electric-blue), var(--accent-blue));
-            color: var(--text-white);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 15px rgba(0, 212, 255, 0.3);
-        }
-
-        .reveal-email-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.5);
-        }
-
 
         /* LinkedIn Button */
         .linkedin-btn {
@@ -821,128 +764,57 @@
             box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
         }
 
-        /* Modal Styles */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, var(--carbon-light), var(--carbon-bg));
-            border: 1px solid var(--electric-blue);
-            border-radius: 20px;
-            max-width: 500px;
-            width: 120%;
-            max-height: 90vh;
-            overflow-y: auto;
-            animation: modalSlideIn 0.3s ease-out;
-        }
-
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 40px 20px;
-            border-bottom: 1px solid var(--electric-blue);
-        }
-
-        .modal-header h3 {
-            color: var(--electric-blue);
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            color: var(--electric-blue);
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background: var(--electric-blue);
-            color: var(--text-white);
-            transform: rotate(90deg);
-        }
-
-        .modal-body {
-            padding: 20px 40px 40px;
-        }
-
-        /* CAPTCHA Styles */
-        .captcha-container {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid var(--electric-blue);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
+        /* Legal panels */
+        .site-footer {
             text-align: center;
+            padding: 20px;
+            color: var(--text-gray);
+            border-top: 1px solid var(--carbon-light);
+            margin-top: 40px;
         }
 
-        .captcha-question {
+        .site-footer a {
             color: var(--electric-blue);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
         }
 
-        .captcha-input {
-            width: 100px;
-            padding: 8px 12px;
-            background: var(--primary-dark);
-            border: 2px solid var(--electric-blue);
-            border-radius: 5px;
-            color: var(--text-white);
-            font-size: 1rem;
-            text-align: center;
-            margin: 0 10px;
+        .footer-links {
+            white-space: nowrap;
         }
 
-        .captcha-refresh {
+        .legal-panel {
+            display: none;
+            padding: 60px 0 20px;
+        }
+
+        .legal-panel.open {
+            display: block;
+        }
+
+        .legal-text {
+            color: var(--text-gray);
+            line-height: 1.8;
+            white-space: pre-wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-close {
+            display: block;
+            margin: 30px auto 0;
             background: transparent;
-            border: 1px solid var(--electric-blue);
+            border: 2px solid var(--electric-blue);
             color: var(--electric-blue);
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 10px 25px;
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 0.9rem;
-            margin-left: 10px;
+            font-size: 1rem;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        .captcha-refresh:hover {
+        .legal-close:hover {
             background: var(--electric-blue);
-            color: var(--text-white);
+            color: var(--primary-dark);
         }
 
         /* Responsive Design - Enhanced Mobile Support */
@@ -963,8 +835,9 @@
                 text-align: center;
                 transition: left 0.3s ease;
                 padding-top: 120px;
-                gap: 3rem;
+                gap: 2rem;
                 z-index: 1000;
+                overflow-y: auto;
             }
 
             .nav-menu.active {
@@ -984,8 +857,17 @@
                 font-size: 1.2rem;
             }
 
+            .hero-problem {
+                font-size: 1.15rem;
+                padding-left: 18px;
+            }
+
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
+            }
+
+            .hero-content {
+                text-align: left;
             }
 
             .profile-container {
@@ -996,11 +878,6 @@
             .profile-image {
                 width: 150px;
                 height: 150px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
             }
 
             .timeline::before {
@@ -1024,26 +901,8 @@
                 align-self: flex-start;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
             .skills-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .modal-content {
-                margin: 10px;
-                max-height: 80vh;
-            }
-
-            .modal-header {
-                padding: 20px 30px 15px;
-            }
-
-            .modal-body {
-                padding: 15px 30px 30px;
             }
 
             .section-header h2 {
@@ -1056,6 +915,14 @@
 
             .stat-number {
                 font-size: 2.5rem;
+            }
+
+            .contact-info {
+                padding: 30px 20px;
+            }
+
+            .contact-item {
+                align-items: flex-start;
             }
         }
 
@@ -1076,7 +943,11 @@
 
             .cta-buttons {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+            }
+
+            .cta-button {
+                text-align: center;
             }
 
             .nav-container {
@@ -1122,106 +993,307 @@
             transform: translateX(0);
         }
 
-        /* Loading Animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
         }
 
-        .loading-spinner {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+        /* Print stylesheet */
+        @media print {
+            @page {
+                margin: 15mm;
+            }
 
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ffffff;
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+            html, body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-size: 10.5pt;
+                line-height: 1.45;
+            }
+
+            body::before,
+            .hero::before,
+            .profile-image::before,
+            .stat-card::before {
+                display: none !important;
+                content: none !important;
+            }
+
+            .navbar,
+            .hamburger,
+            .nav-menu,
+            .skip-link,
+            .cta-buttons,
+            .contact-cta,
+            .linkedin-btn,
+            .profile-container .profile-image,
+            .legal-panel,
+            .legal-close,
+            .footer-links {
+                display: none !important;
+            }
+
+            main {
+                padding-top: 0;
+            }
+
+            .hero {
+                background: none !important;
+                padding: 0 0 12pt;
+                text-align: left;
+            }
+
+            .hero-content {
+                max-width: none;
+            }
+
+            .hero-content h1 {
+                font-size: 22pt;
+                color: #000 !important;
+                margin-bottom: 4pt;
+            }
+
+            .hero-title {
+                font-size: 12pt;
+                color: #000 !important;
+                text-shadow: none !important;
+                margin-bottom: 8pt;
+            }
+
+            .hero-problem,
+            .hero-subtitle {
+                font-size: 10.5pt;
+                color: #000 !important;
+                border-left: none !important;
+                padding-left: 0 !important;
+                margin-bottom: 6pt;
+            }
+
+            .key-stats,
+            .about-content,
+            .achievements-section,
+            .experience-content,
+            .skills-content,
+            .contact-content {
+                padding: 10pt 0 !important;
+                background: none !important;
+                break-inside: auto;
+            }
+
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+
+            .section-header {
+                margin-bottom: 10pt;
+                text-align: left;
+            }
+
+            .section-header h2 {
+                font-size: 14pt;
+                color: #000 !important;
+                text-shadow: none !important;
+                border-bottom: 1pt solid #000;
+                margin-bottom: 6pt;
+                padding-bottom: 2pt;
+            }
+
+            .section-header p {
+                font-size: 10pt;
+                color: #333 !important;
+                max-width: none;
+                margin: 0;
+            }
+
+            .stats-grid,
+            .achievements-grid,
+            .skills-grid {
+                display: block;
+                margin-top: 6pt;
+            }
+
+            .stat-card,
+            .achievement-card,
+            .skill-category,
+            .timeline-content,
+            .contact-info,
+            .contact-item {
+                background: none !important;
+                border: none !important;
+                border-left: 1pt solid #000 !important;
+                box-shadow: none !important;
+                transform: none !important;
+                padding: 4pt 0 4pt 8pt !important;
+                margin: 0 0 8pt !important;
+                width: auto !important;
+                border-radius: 0 !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .stat-card {
+                display: inline-block;
+                width: 46% !important;
+                text-align: left;
+            }
+
+            .stat-number {
+                font-size: 12pt;
+                color: #000 !important;
+                text-shadow: none !important;
+                display: inline;
+                margin-right: 6pt;
+            }
+
+            .stat-label {
+                color: #000 !important;
+                display: inline;
+                font-size: 10pt;
+            }
+
+            .about-text,
+            .legal-text {
+                max-width: none;
+            }
+
+            .about-text p,
+            .achievement-card p,
+            .achievements li,
+            .role-description,
+            .contact-value {
+                color: #000 !important;
+                font-size: 10.5pt;
+            }
+
+            .about-text p.lead-out {
+                border-left: none !important;
+                padding-left: 0 !important;
+            }
+
+            .achievement-card h3,
+            .skill-category h3,
+            .role-title,
+            .contact-label,
+            .achievement-card .card-meta,
+            .company {
+                color: #000 !important;
+                text-shadow: none !important;
+                text-align: left;
+            }
+
+            .timeline {
+                margin: 6pt 0;
+            }
+
+            .timeline::before {
+                display: none !important;
+            }
+
+            .timeline-item {
+                display: block !important;
+                margin: 0 0 10pt !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .timeline-date {
+                position: static !important;
+                transform: none !important;
+                background: none !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                font-size: 10pt;
+                display: block;
+                margin-bottom: 2pt;
+            }
+
+            .achievements li::before {
+                color: #000 !important;
+            }
+
+            .skill-tags {
+                display: block;
+            }
+
+            .skill-tag {
+                background: none !important;
+                border: none !important;
+                color: #000 !important;
+                padding: 0 !important;
+                display: inline;
+                font-size: 10pt;
+            }
+
+            .skill-tag::after {
+                content: ' · ';
+            }
+
+            .skill-tag:last-child::after {
+                content: '';
+            }
+
+            .contact-icon {
+                display: none !important;
+            }
+
+            .site-footer {
+                border-top: 1pt solid #000;
+                color: #000 !important;
+                text-align: left;
+                padding: 6pt 0 0;
+                margin-top: 10pt;
+                font-size: 8pt;
+            }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Lionel Fevre
-			</div>
-                <ul class="nav-menu">
-                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
-                    <li><a href="#" class="nav-link" data-page="experience">Experience</a></li>
-                    <li><a href="#" class="nav-link" data-page="skills">Skills & Expertise</a></li>
-                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                <div class="logo">Lionel Fèvre</div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#problem" class="nav-link">The Problem</a></li>
+                    <li><a href="#ownership" class="nav-link">The Remit</a></li>
+                    <li><a href="#sectors" class="nav-link">Sectors</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
-				<button class="submit-btn" onclick="requestCvDownload()" >Resume/CV</button>
+                </button>
             </div>
         </div>
-		
-		
     </nav>
-	
-    <!-- CV Download Modal -->
-    <div id="cv-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Receive Resume/CV</h3>
-                <button class="modal-close" onclick="hideCvForm()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-gray); margin-bottom: 20px;">Please provide your information and complete the security verification to download my resume:</p>
-                <form id="cvForm">
-                    <div class="form-group">
-                        <label for="cv-name">Name *</label>
-                        <input type="text" id="cv-name" name="cv-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cv-email">Email *</label>
-                        <input type="email" id="cv-email" name="cv-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cv-company">Company / Organization</label>
-                        <input type="text" id="cv-company" name="cv-company" placeholder="Optional">
-                    </div>
-					<div class="form-group cv-terms-group">
-						<label for="cv-terms">
-							<input type="checkbox" id="cv-terms" name="cv-terms" required>
-							I accept the Terms & Conditions
-						</label>
-					</div>
-					<div class="captcha-container">
-                        <div class="captcha-question" id="captcha-question">What is 5 + 3?</div>
-                        <input type="number" id="captcha-answer" name="captcha-answer" class="captcha-input" placeholder="?" required>
-                        <button type="button" class="captcha-refresh" onclick="generateCaptcha()">🔄 New Question</button>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Request</button>
-                </form>
-            </div>
-        </div>
-    </div>
-	
-    <!-- Home Page -->
-    <div id="home" class="page active">
-        <section class="hero">
+
+    <main id="main">
+
+        <!-- 1. Hero -->
+        <section class="hero section-anchor" id="home">
             <div class="container">
                 <div class="profile-container">
-                    <div class="profile-image fallback"> </div>
+                    <div class="profile-image fallback" role="img" aria-label="Portrait of Lionel Fèvre"></div>
                     <div class="hero-content">
-                        <h1>Lionel Fevre</h1>
-                        <div class="hero-title">Senior Level Engineering Leader</div>
-                        <p class="hero-subtitle">Specializing in Engineering Processes, Business Efficiency, Technological Innovation & High-Performance Teams</p>
+                        <h1>Lionel Fèvre</h1>
+                        <p class="hero-title">Engineering Processes, Technical Innovation and Business Efficiency</p>
+                        <p class="hero-problem">Engineering hours are finite, and most of the recoverable waste sits between departments rather than inside them — in un-monitored hand-offs, incompatible data and duplicated effort whose impact is silent because no single function owns it.</p>
+                        <p class="hero-subtitle">I focus on the end-to-end design-to-manufacturing process and data architecture that spans departments: CAD and PLM governance, engineering standards and methodology, the automation portfolio, materials and mass data continuity, configuration management and regulatory data.</p>
                         <div class="cta-buttons">
-                            <a href="#" class="cta-button" data-page="about">Discover My Approach</a>
-                            <a href="#" class="cta-button secondary" data-page="contact">Let's Connect</a>
+                            <a href="https://www.linkedin.com/in/lionelfevre" target="_blank" rel="noopener noreferrer" class="cta-button">Connect on LinkedIn</a>
+                            <a href="#problem" class="cta-button secondary">Read the argument</a>
                         </div>
                     </div>
                 </div>
@@ -1231,730 +1303,556 @@
         <section class="key-stats">
             <div class="container">
                 <div class="section-header">
-                    <h2>Driving Engineering Excellence</h2>
-                    <p>Proven track record of transforming engineering efficiency across elite organizations from Formula One teams to major Aerospace players</p>
+                    <h2>Where the record stands</h2>
+                    <p>Engineering process and data architecture, in motorsport and aerospace.</p>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card fade-in">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Years Engineering Leadership</div>
+                        <div class="stat-number">22</div>
+                        <div class="stat-label">Years engineering</div>
                     </div>
                     <div class="stat-card fade-in">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Countries</div>
-                    </div>                    
+                        <div class="stat-number">11</div>
+                        <div class="stat-label">Years Formula 1</div>
+                    </div>
                     <div class="stat-card fade-in">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Expatriations across<br>North America and Europe</div>
-                    </div>					
-					<div class="stat-card fade-in">
                         <div class="stat-number">350+</div>
-                        <div class="stat-label">Engineers Supported Globally</div>
+                        <div class="stat-label">Engineers supported</div>
                     </div>
-
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Expatriations across<br>North America and Europe</div>
+                    </div>
                 </div>
             </div>
         </section>
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a> |
-			<small>All product names, logos, and brands are property of their respective owners. Use of these names, logos, and brands does not imply endorsement.</small>
-		</footer>
-    </div>
 
-    <!-- About Page -->
-    <div id="about" class="page">
-        <section class="about-content">
+        <!-- 2. The problem -->
+        <section class="about-content section-anchor" id="problem">
             <div class="container">
                 <div class="section-header">
-                    <h2>About Me</h2>
-                    <p>Transformational engineering leader with two decades of experience driving process optimization and business efficiency</p>
-
-				</div>
-
-                <div class="about-grid">
-                    <div class="about-profile slide-in-left">
-                        <div class="profile-image fallback"> </div>
-                        <h3>Leadership Philosophy</h3>
-                        <p>I believe in empowering teams through systematic process optimization and innovative technology adoption. My approach combines analytical rigor with collaborative leadership to drive sustainable engineering excellence.</p>
-                    </div>
-                    
-                    <div class="about-text slide-in-right">
-                        <h3>Professional Journey</h3>
-                        <p>My career spans over two decades of engineering leadership across some of the world's most demanding environments - from Formula 1 racing at Scuderia Ferrari® F1 and Lotus F1 Team®, to aerospace innovation at Bombardier®. This unique blend of high-stakes motorsport and aerospace engineering has shaped my approach to process optimization and team performance.</p>
-                        
-                        <p>Currently serving as Head of Design Processes at Scuderia Ferrari® F1 (Chassis), I lead the standardization of tools and processes across multiple design offices, manage CAD/PLM governance, and drive continuous improvement initiatives that directly impact race performance.</p>
-                        
-                        <p>My expertise lies in transforming complex engineering challenges into streamlined, efficient processes that deliver measurable results. I specialize in building high-performing teams, implementing cutting-edge digital tools, and establishing governance frameworks that scale across business operations.</p>
-
-                        <h3>Academic Foundation</h3>
-                        <p><strong>Master of Science in Mechanical Engineering</strong></p>
-						<p>2003 - Florida Institute of Technology (GPA: 4.00/4.00)</p>
-                        <p><strong>Thesis:</strong> "Design and Construction of Six Degree-of-Freedom Positioning System"</p>
-						<p>Demonstrating early passion for problem-solving and precision engineering.</p>
-                        <p><strong>Bachelor of Science in Mechanical Engineering</strong></p>
-						<p>2002 - Florida Institute of Technology (GPA: 3.87/4.00)</p>
-                    </div>
+                    <h2>The problem</h2>
+                    <p>An observation about how engineering organisations are structured, not about any one of them.</p>
                 </div>
-    
-    
+                <div class="about-text slide-in-left">
+                    <p>Every engineering organisation of any scale employs a Head of PLM, a CAD manager, a systems owner. Those roles are real, they are competently filled, and they do not fix this — because each of them owns one tool stack inside one department.</p>
+                    <p>The cost is paid at every hand-off. The same data is rebuilt rather than reused, because the receiving function cannot consume the format it arrives in. Information is re-keyed across a system boundary because no interface was ever specified. A decision waits on data that already exists somewhere else, in a form nobody downstream can open. None of it appears as a line item, because no line item exists for effort spent a second time.</p>
+                    <p>The impact is silent by construction. Waste inside a department shows up against that department's budget and someone answers for it. Waste between departments belongs to no cost centre, appears in no report, and is absorbed as the normal cost of doing engineering. It is not tolerated because anyone decided to tolerate it — it is tolerated because nothing measures it.</p>
+                    <p>The structural cause is ownership, not competence. A cross-department improvement carries its cost in one budget and delivers its benefit in another, so the function paying has no case to fund it and the function benefiting has no authority to demand it. The flow between departments goes unowned because no conventional role is scoped across it — every conventional role is scoped inside one.</p>
+                    <p class="lead-out">Where engineering capacity is capped, hours recovered from re-work and hand-off friction are development capacity gained at no additional cost. It is the cheapest capacity an engineering organisation can obtain, because it already owns it.</p>
+                </div>
             </div>
         </section>
 
-        <section class="achievements-section">
+        <!-- 3. What I own -->
+        <section class="achievements-section section-anchor" id="ownership">
             <div class="container">
                 <div class="section-header">
-                    <h2>Professional Certifications & Core Competencies</h2>
-                    <p>Specialized expertise in leadership methodologies and crisis management</p>
+                    <h2>The Remit</h2>
+                    <p>Stated as responsibility, not as achievement.</p>
                 </div>
                 <div class="achievements-grid">
                     <div class="achievement-card fade-in">
-                        <h4>🎯 Executive Coaching Certification</h4>
-                        <p>Advanced coaching methodologies for high-performance team development and individual leadership growth in technical organizations.</p>
+                        <h3>Process architecture and governance</h3>
+                        <p>End-to-end design engineering process architecture and governance across multiple design offices — standards, methodology, data continuity and the interfaces between departments.</p>
                     </div>
                     <div class="achievement-card fade-in">
-                        <h4>⚡ Crisis Management Leadership</h4>
-                        <p>Specialized training in navigating critical project challenges, particularly in high-stakes environments like Formula 1 racing and aerospace development.</p>
+                        <h3>Multi-year platform programme</h3>
+                        <p>A multi-year engineering platform programme across a multi-site design organisation, from blueprint through roadmap definition to delivery, reporting under senior technical leadership.</p>
                     </div>
                     <div class="achievement-card fade-in">
-                        <h4>🧠 Strategic Decision Making</h4>
-                        <p>Data-driven decision frameworks for complex engineering challenges, balancing technical requirements with business objectives and timeline constraints.</p>
+                        <h3>Cross-functional continuity</h3>
+                        <p>Cross-functional process and data continuity across stakeholder functions, holding no line authority over any of them: span of process rather than span of control.</p>
                     </div>
                     <div class="achievement-card fade-in">
-                        <h4>👥 Advanced Team Management</h4>
-                        <p>Proven methodologies for scaling engineering teams, cross-cultural leadership, and implementing Agile management techniques in technical environments.</p>
+                        <h3>Automation portfolio and budget</h3>
+                        <p>The engineering automation portfolio, an annual hardware, software and development budget, and the vendor and licence estate behind them.</p>
                     </div>
                     <div class="achievement-card fade-in">
-                        <h4>🚀 Digital Transformation Leadership</h4>
-                        <p>Expertise in CAD/PLM governance, automation implementation, and driving technology adoption across international engineering organizations.</p>
-                    </div>
-                    <div class="achievement-card fade-in">
-                        <h4>📊 Process Optimization Specialist</h4>
-                        <p>Systematic approach to identifying inefficiencies, implementing streamlined workflows, and measuring performance improvements in engineering operations.</p>
+                        <h3>Regulatory engineering data</h3>
+                        <p>Regulatory engineering data declarations to an external certifying authority, delivered across successive product cycles with no major findings.</p>
                     </div>
                 </div>
             </div>
         </section>
-		                
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a> | 
-			    <small>All product names, logos, and brands are property of their respective owners. Use of these names, logos, and brands does not imply endorsement.</small>
-		</footer>
-    </div>
 
-    <!-- Experience Page -->
-    <div id="experience" class="page">
-        <section class="experience-content">
+        <!-- 4. Sectors -->
+        <section class="about-content section-anchor" id="sectors">
             <div class="container">
                 <div class="section-header">
-                    <h2>Professional Experience</h2>
-                    <p>Two decades of progressive leadership across elite engineering organizations</p>
+                    <h2>Sectors</h2>
+                    <p>The same capability, stated in each sector's vocabulary.</p>
+                </div>
+                <div class="achievements-grid">
+                    <div class="achievement-card fade-in">
+                        <h3>Motorsport</h3>
+                        <p>Formula 1 design offices run short cycles, continuous change and a regulatory data obligation that never pauses. The work is to govern CAD and PLM so design output is conformant at release, keep mass and materials data continuous from design through manufacturing, and record product configuration per build cycle so downstream functions can establish which parts were used, where and when.</p>
+                    </div>
+                    <div class="achievement-card fade-in">
+                        <h3>Aerospace</h3>
+                        <p>Aerospace pays for hand-off friction in inspection effort and re-work. Built from zero the automated design-quality system that replaced manual inspection, scaled to 350+ engineers across six international sites, with the engineering methodology, documentation and training built alongside the tool and adoption audits run to sustain methodology compliance.</p>
+                    </div>
+                    <div class="achievement-card fade-in">
+                        <h3>Advanced manufacturing</h3>
+                        <p>Outside motorsport and aerospace the constraint is identical: design intent has to survive the journey to the shop floor without being rebuilt. Qualified materials consolidated into a single authoritative dataset, mass methodology aligned across manufacturing, quality and supply, configuration recorded per build cycle, and the interfaces between departments specified rather than assumed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-				</div>
+        <!-- 5. Professional experience -->
+        <section class="experience-content section-anchor" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Professional experience</h2>
+                    <p>Complete record, most recent first.</p>
+                </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="role-title">Head of Design Processes, Tools & Engineering Services</h3>
-                            <div class="company">Scuderia Ferrari® F1 | Maranello, Italy</div>
-                            <p class="role-description">Leading digital transformation and AI integration across Ferrari® F1's chassis design office, directly impacting race performance through operational excellence and innovation.</p>
+                            <h3 class="role-title">Head of Design Processes and Engineering Services</h3>
+                            <p class="company">Scuderia Ferrari | Maranello, Italy</p>
                             <ul class="achievements">
-                                <li>Development of AI Tools and Agents to eliminate inefficient tasks</li>
-                                <li>Standardized tools and processes across multiple international design offices</li>
-                                <li>Led CAD/PLM governance ensuring downstream data compliance and integrity</li>
-                                <li>Implemented frequent data compliance declarations with FIA authorities</li>
-                                <li>Applied Agile management techniques for efficient team prioritization</li>
-                                <li>Optimized budget allocation for hardware, licenses, and supplier developments</li>
-                                <li>Managed external consultants, suppliers, and engineering internship programs</li>
-                                <li>Drove disruptive leadership initiatives promoting innovation beyond industry best practices</li>
-                                <li>Created comprehensive Material Database for Composites, Metals, and Polymers</li>
-							</ul>
+                                <li>Resolved a long-standing PLM architecture conflict with a peer design function operating in a separate branch, eliminating circular references in the integrated product assembly; the agreed solution is now binding methodology for both organisations, reached with no line authority over either.</li>
+                                <li>Govern consolidation of qualified materials from multiple legacy sources into a single authoritative dataset, giving cost engineering a basis on which to price material substitution and designers the ability to compute assembly mass before drawing release.</li>
+                                <li>Aligned mass-reporting methodology across composite manufacturing, quality and supply, standardising component definition against drawing call-out and introducing minimum batch sampling on supplier parts.</li>
+                                <li>Deliver configuration management capability recording product configuration per build cycle, so downstream functions can establish precisely which parts were used, where and when.</li>
+                                <li>Own the annual hardware, software and development budget; rationalised recurring licence and vendor spend, and allocate development spend by ranked return on investment.</li>
+                                <li>Restructured support delivery through agile prioritisation, redeploying support capacity into tool and method development, and replaced ad-hoc onboarding with structured induction and self-directed training.</li>
+                                <li>Coordinate design process and data continuity across design offices, PMO, quality, composite and metal manufacturing, logistics and supply, with an external certifying authority as regulatory stakeholder.</li>
+                            </ul>
                         </div>
-                        <div class="timeline-date">Sep 2023 - Present</div>
+                        <div class="timeline-date">09/2023 – Present</div>
                     </div>
-    
-    
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="role-title">Responsible for Design Tools and Methodologies</h3>
-                            <div class="company">Scuderia Ferrari® F1 | Maranello, Italy</div>
-                            <p class="role-description">Managed cross-functional team driving Design Efficiency Improvement Program and CAD/PLM tool optimization for competitive advantage.</p>
+                            <h3 class="role-title">Design Tools and Methodologies Lead</h3>
+                            <p class="company">Scuderia Ferrari | Maranello, Italy</p>
+                            <p class="role-description">Internal title: Responsible for Design Tools and Methodologies.</p>
                             <ul class="achievements">
-                                <li>Led team of 4 engineers in Design Efficiency Improvement Program</li>
-                                <li>Developed and optimized CAD & PLM tools for enhanced productivity</li>
-                                <li>Built comprehensive self-learning training materials and assessment programs</li>
-                                <li>Published and maintained Engineering Standards across the organization</li>
-                                <li>Authored technical documentation and methodologies</li>
-                                <li>Implemented knowledge assessment systems for continuous improvement</li>
-                                <li>Established standardized workflows reducing design cycle time by 25%</li>
+                                <li>Automated composite design-to-manufacturing preparation across the composite structures programme, replacing manual plybook creation and mould assembly definition with generated output.</li>
+                                <li>Built and led the design organisation's tooling, methodology, engineering standards and user support function; established self-directed training built from user knowledge assessment.</li>
                             </ul>
                         </div>
-                        <div class="timeline-date">Jan 2021 - Sep 2023</div>
+                        <div class="timeline-date">01/2021 – 09/2023</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3 class="role-title">Senior CATIA Support Engineer</h3>
-                            <div class="company">Scuderia Ferrari® F1 | Maranello, Italy</div>
-                            <p class="role-description">Focused on developing custom automation tools to enhance team design efficiency and productivity in high-pressure F1 development cycles.</p>
+                            <p class="company">Scuderia Ferrari | Maranello, Italy</p>
                             <ul class="achievements">
-                                <li>Developed and managed custom design automation tools</li>
-                                <li>Significantly improved team design efficiency through tool optimization</li>
-                                <li>Provided critical technical support during race development cycles</li>
-                                <li>Created automated workflows reducing manual design tasks by 40%</li>
-                                <li>Implemented quality control measures preventing design errors</li>
-                                <li>Supported rapid prototyping initiatives for competitive advantage</li>
+                                <li>Specified and built the automated quality-check system that replaced manual inspection of design output, establishing the conformance-checking platform now applied at every drawing release.</li>
                             </ul>
                         </div>
-                        <div class="timeline-date">Jan 2020 - Jan 2021</div>
+                        <div class="timeline-date">01/2020 – 01/2021</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="role-title">Senior Engineering Design Automations Team Lead</h3>
-                            <div class="company">Consultant for Bombardier® Aerospace | Montréal, Canada</div>
-                            <p class="role-description">Led global team of CAD engineers supporting 350+ users across 6 international sites, driving automation and quality standards across aerospace operations.</p>
+                            <h3 class="role-title">Senior Eng. Design Automation Team Lead (Consultant)</h3>
+                            <p class="company">Bombardier Aerospace | Montréal, Canada</p>
                             <ul class="achievements">
-                                <li>Managed team of 3 CAD Engineers supporting 350+ global users</li>
-                                <li>Automated business quality standards into custom Quality Control tool</li>
-                                <li>Led development, testing, release, and maintenance of custom engineering tools</li>
-                                <li>Supervised tool architecture for standardization, robustness, and reusability</li>
-                                <li>Performed user audits ensuring methodology adoption and compliance</li>
-                                <li>Established Design Efficiency Improvement Plans with executive management</li>
-                                <li>Implemented Web APIs and service requests for custom tools</li>
-                                <li>Provided strategic technical expertise to C-level executives for future planning</li>
-                                <li>Reduced design errors by 60% through automated quality controls</li>
+                                <li>Designed and built from zero the automated design-quality system replacing a manual inspection process: defined the roadmap, wrote the tool specification and the accompanying engineering methodology, authored the documentation and trained the full user base.</li>
+                                <li>Scaled it to 350+ engineers across six international sites, automating 450 points of a 1,400-point 3D and 2D quality checklist applied at every release; led the CAD engineering team and ran adoption audits to sustain methodology compliance.</li>
+                                <li>Reduced releases containing at least one non-conformance from 98% to 12%; six dedicated drawing-checker roles eliminated within three years. Implemented web API and service-request architecture across the tool estate.</li>
                             </ul>
                         </div>
-                        <div class="timeline-date">Apr 2015 - Oct 2019</div>
+                        <div class="timeline-date">04/2015 – 10/2019</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="role-title">CAD & PLM Support Administrator</h3>
-                            <div class="company">Lotus F1 Team® | Enstone, United Kingdom</div>
-                            <p class="role-description">Managed comprehensive Design Efficiency Improvement Program while contributing directly to aerodynamic surface design and composite bodywork development.</p>
+                            <h3 class="role-title">CAD and PLM Support Administrator</h3>
+                            <p class="company">Lotus F1 Team | Enstone, United Kingdom</p>
                             <ul class="achievements">
-                                <li>Managed Design Efficiency Improvement Program for entire Design Office</li>
-                                <li>Developed and deployed VBA Macros, Scripts, and Batch automation</li>
-                                <li>Served dual role as Lead Aero Surface Designer for complex chassis surfaces</li>
-                                <li>Created innovative composite design solutions for Formula 1 bodywork</li>
-                                <li>Implemented automated workflows reducing design cycle time</li>
-                                <li>Contributed to aerodynamic performance improvements through surface optimization</li>
-                                <li>Established processes that became industry best practices</li>
+                                <li>Ran the design office's efficiency improvement programme and owned the full VBA, scripting and batch automation estate through development, test and deployment.</li>
+                                <li>Doubled as lead aerodynamic surface designer on complex chassis surfaces and as composite designer generating the car's bodywork — process ownership held alongside on-car design responsibility.</li>
                             </ul>
                         </div>
-                        <div class="timeline-date">Jun 2012 - Mar 2015</div>
+                        <div class="timeline-date">06/2012 – 03/2015</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="role-title">Senior Aero Concept Surface Designer</h3>
-                            <div class="company">Consultant for Scuderia Ferrari® F1  | Maranello, Italy</div>
-                            <p class="role-description">Specialized consulting role as CATIA V5 Surfave Design Expert, optimizing rapid prototyping processes and managing regulatory compliance automation.</p>
+                            <h3 class="role-title">Senior Aerodynamic Concept Surface Designer</h3>
+                            <p class="company">Nous-Consulting (Ferrari SpA) | Maranello, Italy</p>
                             <ul class="achievements">
-                                <li>Provided expert CATIA V5 consulting for Surfacic/Part Design/Macro development</li>
-                                <li>Optimized modularity of Rapid Prototyping Parts minimizing Wind Tunnel downtime</li>
-                                <li>Managed FIA Regukations through Design control automations</li>
+                                <li>Optimised rapid-prototyping part modularity to minimise wind tunnel downtime; owned the regulatory-check and user macro estate as CATIA V5 surfacing specialist.</li>
                             </ul>
                         </div>
-                        <div class="timeline-date">Jan 2011 - May 2012</div>
+                        <div class="timeline-date">01/2011 – 05/2012</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="role-title">Early Career Development</h3>
-                            <div class="company">Various Organizations | North America</div>
-                            <p class="role-description">Progressive roles building foundation in CAD development, project management, and engineering design across multiple industries.</p>
+                            <h3 class="role-title">CATIA Development Manager</h3>
+                            <p class="company">Innovation Virtuael | Montréal, Canada</p>
                             <ul class="achievements">
-                                <li><strong>CATIA Development Manager</strong> - Innovation Virtuael (2008-2010)</li>
-                                <li><strong>CATIA Support & Design Engineering</strong> - Mecachrome (2004-2008)</li>
-                                <li><strong>Research Assistant & Teacher</strong> - Florida Institute of Technology (2002-2003)</li>
-                                <li>Developed client-customized programs reducing costs and increasing quality</li>
-                                <li>Managed complete project workflows from requirements to release</li>
-                                <li>Reported directly to Directors on project status and strategic initiatives</li>
-                                <li>Built expertise in Mass Properties Engineering and Junior Design roles</li>
-                                <li>Contributed to SAE Formula Car design and manufacturing</li>
+                                <li>Delivered custom engineering applications from requirements through to release, reporting programme status directly to the Director of Operations.</li>
                             </ul>
                         </div>
-                        <div class="timeline-date">2002 - 2010</div>
+                        <div class="timeline-date">10/2008 – 11/2010</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="role-title">CATIA Support and Design Engineer</h3>
+                            <p class="company">Mecachrome | Montréal, Canada</p>
+                            <ul class="achievements">
+                                <li>Designed and automated airframe structures, building the CAD and scripting practice later applied at programme scale.</li>
+                                <li>Delivered the mass properties reports as mass properties engineer — where the mass discipline now applied to design-to-manufacturing data continuity was learnt.</li>
+                            </ul>
+                        </div>
+						<div class="timeline-date">12/2004 – 10/2008</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="role-title">Junior Design Engineer</h3>
+                            <p class="company">CDI Engineering Solutions | Montréal, Canada</p>
+                            <ul class="achievements">
+                                <li>Designed airframe structures and assisted mass properties engineering — first exposure to the mass discipline.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-date">03/2004 – 12/2004</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="role-title">Research and Teaching Assistant</h3>
+                            <p class="company">Florida Institute of Technology | Melbourne, Florida, USA</p>
+                            <ul class="achievements">
+                                <li>Taught &ldquo;Introduction to CAD Design&rdquo;.</li>
+                            </ul>                        
+							</div>
+                        <div class="timeline-date">06/2002 – 12/2003</div>
                     </div>
                 </div>
             </div>
         </section>
-		                
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a> | 
-			    <small>All product names, logos, and brands are property of their respective owners. Use of these names, logos, and brands does not imply endorsement.</small>
-		</footer>
-    </div>
 
-    <!-- Skills Page -->
-    <div id="skills" class="page">
-        <section class="skills-content">
+        <!-- 6. Skills -->
+        <section class="skills-content section-anchor" id="skills">
             <div class="container">
                 <div class="section-header">
-                    <h2>Skills & Expertise</h2>
-                    <p>Comprehensive technical and leadership capabilities spanning over engineering processes, digital transformation, and high-performance team management</p>
-				</div>
+                    <h2>Skills</h2>
+                    <p>Six competency clusters.</p>
+                </div>
 
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>🎯 Leadership & Management</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Executive Team Leadership</span>
-                            <span class="skill-tag">Cross-Cultural Management</span>
-                            <span class="skill-tag">Crisis Management</span>
-                            <span class="skill-tag">Strategic Decision Making</span>
-                            <span class="skill-tag">Agile Management</span>
-                            <span class="skill-tag">Budget Optimization</span>
-                            <span class="skill-tag">Stakeholder Management</span>
-                            <span class="skill-tag">Executive Coaching</span>
-                            <span class="skill-tag">Change Leadership</span>
-                        </div>
-                    </div>
-    
-    
-
-                    <div class="skill-category">
-                        <h3>⚙️ Engineering Processes</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Process Standardization</span>
-                            <span class="skill-tag">Design Efficiency</span>
-                            <span class="skill-tag">Quality Control Systems</span>
-                            <span class="skill-tag">Workflow Optimization</span>
-                            <span class="skill-tag">Engineering Documentation</span>
-                            <span class="skill-tag">Compliance Management</span>
-                            <span class="skill-tag">Best Practices Development</span>
-                            <span class="skill-tag">Performance Metrics</span>
-                            <span class="skill-tag">Kaizen Continuous Improvement</span>
-                        </div>
+                        <h3>Process Architecture &amp; Governance</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">End-to-end process design</li>
+                            <li class="skill-tag">Engineering systems architecture</li>
+                            <li class="skill-tag">Engineering transformation programmes</li>
+                            <li class="skill-tag">Cross-functional governance</li>
+                            <li class="skill-tag">Standards definition and enforcement</li>
+                            <li class="skill-tag">Engineering operations</li>
+                            <li class="skill-tag">Continuous improvement (Kaizen)</li>
+                            <li class="skill-tag">Agile prioritisation</li>
+                            <li class="skill-tag">Change management</li>
+                            <li class="skill-tag">KPI definition and measurement</li>
+                            <li class="skill-tag">Business case development</li>
+                        </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3>🚀 Digital Transformation</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">CAD/PLM Governance</span>
-                            <span class="skill-tag">Tool Standardization</span>
-                            <span class="skill-tag">Automation Implementation</span>
-                            <span class="skill-tag">Digital Strategy</span>
-                            <span class="skill-tag">Data Integrity</span>
-                            <span class="skill-tag">Technology Adoption</span>
-                            <span class="skill-tag">System Integration</span>
-                            <span class="skill-tag">Innovation Leadership</span>
-                        </div>
+                        <h3>PLM, CAD &amp; Data Continuity</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">CATIA V5</li>
+                            <li class="skill-tag">CATIA V6 / 3DEXPERIENCE</li>
+                            <li class="skill-tag">ENOVIA</li>
+                            <li class="skill-tag">Windchill</li>
+                            <li class="skill-tag">PLM migration</li>
+                            <li class="skill-tag">CAD administration</li>
+                            <li class="skill-tag">BOM management</li>
+                            <li class="skill-tag">Configuration management</li>
+                            <li class="skill-tag">Master data management</li>
+                            <li class="skill-tag">Design-to-manufacturing data continuity</li>
+                            <li class="skill-tag">Digital engineering</li>
+                            <li class="skill-tag">Digital thread</li>
+                        </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3>💻 Technical Expertise</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">CATIA V5/V6 Expert</span>
-                            <span class="skill-tag">PLM Systems (Windchill, ENOVIA)</span>
-                            <span class="skill-tag">VBA/Macro Development</span>
-                            <span class="skill-tag">SQL & Database Management</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">AWS Infrastructure</span>
-                            <span class="skill-tag">Visual Studio & GIT</span>
-                            <span class="skill-tag">FEA Knowledge</span>
-                            <span class="skill-tag">Topology Optimization</span>
-                            <span class="skill-tag">AI Tools and Agents Integration</span>
-                        </div>
+                        <h3>Engineering Automation &amp; Tooling</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Design automation</li>
+                            <li class="skill-tag">Knowledge-based engineering</li>
+                            <li class="skill-tag">Automated drawing and model quality checking</li>
+                            <li class="skill-tag">Composite plybook and mould automation</li>
+                            <li class="skill-tag">VBA</li>
+                            <li class="skill-tag">SQL</li>
+                            <li class="skill-tag">REST APIs</li>
+                            <li class="skill-tag">Visual Studio</li>
+                            <li class="skill-tag">Git</li>
+                            <li class="skill-tag">AWS infrastructure</li>
+                            <li class="skill-tag">Requirements specification</li>
+                            <li class="skill-tag">Tool portfolio management</li>
+                        </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3>🏎️ Industry Specializations</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Formula 1 Engineering</span>
-                            <span class="skill-tag">Aerospace Systems</span>
-                            <span class="skill-tag">Automotive Design</span>
-                            <span class="skill-tag">Composite Materials</span>
-                            <span class="skill-tag">Aerodynamic Surfaces</span>
-                            <span class="skill-tag">Rapid Prototyping</span>
-                            <span class="skill-tag">Wind Tunnel Operations</span>
-                            <span class="skill-tag">Regulatory Compliance</span>
-                            <span class="skill-tag">High-Stakes Development</span>
-                        </div>
+                        <h3>Regulatory &amp; Compliance Data</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Regulatory data declarations to external authorities</li>
+                            <li class="skill-tag">Homologation data management</li>
+                            <li class="skill-tag">Audit readiness</li>
+                            <li class="skill-tag">Traceability</li>
+                            <li class="skill-tag">Data governance</li>
+                        </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3>🌍 Global Operations</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Multi-Site Coordination</span>
-                            <span class="skill-tag">International Team Leadership</span>
-                            <span class="skill-tag">Vendor Management</span>
-                            <span class="skill-tag">Cross-Timezone Collaboration</span>
-                            <span class="skill-tag">Cultural Intelligence</span>
-                            <span class="skill-tag">Remote Team Management</span>
-                            <span class="skill-tag">Global Process Standardization</span>
-                            <span class="skill-tag">Multilingual Communication</span>
-                        </div>
+                        <h3>Change Management &amp; Team Leadership</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Team leadership</li>
+                            <li class="skill-tag">Multi-site rollout</li>
+                            <li class="skill-tag">Training and knowledge transfer</li>
+                            <li class="skill-tag">Stakeholder management</li>
+                            <li class="skill-tag">Vendor and licence management</li>
+                            <li class="skill-tag">Budget ownership</li>
+                            <li class="skill-tag">ROI-based portfolio allocation</li>
+                            <li class="skill-tag">Consultant and supplier management</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>AI-Enabled Engineering</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">AI-assisted software development</li>
+                            <li class="skill-tag">Machine-learning-supported engineering workflows</li>
+                            <li class="skill-tag">Agentic workflow development</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a> | 
-			<small>All product names, logos, and brands are property of their respective owners. Use of these names, logos, and brands does not imply endorsement.</small>
-		</footer>
-    </div>
 
-    <!-- Contact Page -->
-    <div id="contact" class="page">
-        <section class="contact-content">
+        <!-- 7. Education -->
+        <section class="achievements-section section-anchor" id="education">
             <div class="container">
                 <div class="section-header">
-                    <h2>Let's Connect</h2>
-                    <p>Feel free to reach out for professional exchanges or to share this profile with your network</p>
-				</div>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3 style="color: var(--electric-blue); margin-bottom: 30px; font-size: 1.8rem;">Contact Information</h3>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Email</strong><br>
-                                <div id="email-container">
-                                    <button id="reveal-email-btn" class="reveal-email-btn">
-                                        🔓 Click to Reveal Email
-                                    </button>
-                                    <span id="email-address" style="color: var(--text-gray); display: none;">contact@fevreconcept.com</span>
-                                </div>
-                            </div>
-    
-    
-                        </div>                        
-                        <div class="contact-item">
-                            <span class="contact-icon">💼</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">LinkedIn</strong><br>
-                                <a href="https://www.linkedin.com/in/lionelfevre" target="_blank" class="linkedin-btn">
-                                    Connect on LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Location</strong><br>
-                                <span style="color: var(--text-gray);">Via Cappella 23, Maranello, Italy</span><br>
-                                <small style="color: var(--accent-blue);">Open to relocation globally</small>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">🌍</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Languages</strong><br>
-                                <span style="color: var(--text-gray);">English (Bilingual), French (Native), Italian (Fluent)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-icon">🛂</span>
-                            <div>
-                                <strong style="color: var(--electric-blue);">Work Authorization</strong><br>
-                                <span style="color: var(--text-gray);">EU (Citizen Rights) | TN-1 Visa Eligible for USA</span><br>
-                                <small style="color: var(--accent-blue);">Authorized to work across Europe & North America</small>
-                            </div>
-                        </div>
+                    <h2>Education</h2>
+                </div>
+                <div class="achievements-grid">
+                    <div class="achievement-card fade-in">
+                        <h3>MSc Mechanical Engineering</h3>
+                        <span class="card-meta">Florida Institute of Technology | Melbourne, Florida, USA | 12/2003</span>
+                        <p><strong>GPA 4.00/4.00.</strong> Thesis: design and construction of a six degree-of-freedom positioning system.</p>
                     </div>
-
-                    <div class="contact-form">
-                        <h3 style="color: var(--electric-blue); margin-bottom: 30px; font-size: 1.8rem;">Send a Message</h3>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="company">Company / Organization</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                            <div class="form-group">
-                                <label for="position">Your Role</label>
-                                <input type="text" id="position" name="position" placeholder="e.g., VP Engineering, CTO, Recruiter">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject *</label>
-                                <input type="text" id="subject" name="subject" required placeholder="e.g., Director Engineering Opportunity, Consulting Discussion">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="6" required placeholder="Tell me about your organization's engineering challenges and how my expertise in process optimization and digital transformation can help drive results..."></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
+                    <div class="achievement-card fade-in">
+                        <h3>BSc Mechanical Engineering</h3>
+                        <span class="card-meta">Florida Institute of Technology | Melbourne, Florida, USA | 05/2002</span>
+                        <p><strong>GPA 3.87/4.00.</strong> Final project: designed and built a Formula SAE race car.</p>
+                    </div>
+                    <div class="achievement-card fade-in">
+                        <h3>Baccalauréat Scientifique</h3>
+                        <span class="card-meta">France | 06/1998</span>
                     </div>
                 </div>
             </div>
         </section>
-		<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-			© Lionel Fevre 2025 | 
-			<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a> | 
-			<small>All product names, logos, and brands are property of their respective owners. Use of these names, logos, and brands does not imply endorsement.</small>
-		</footer>
-    </div>
 
+        <!-- 8. Contact -->
+        <section class="contact-content section-anchor" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact</h2>
+                    <p>One route in.</p>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-cta">
+                        <a href="https://www.linkedin.com/in/lionelfevre" target="_blank" rel="noopener noreferrer" class="cta-button">Connect on LinkedIn</a>
+                        <p>Request the full CV via LinkedIn.</p>
+                    </div>
 
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">💼</span>
+                        <div>
+                            <span class="contact-label">LinkedIn</span><br>
+                            <a href="https://www.linkedin.com/in/lionelfevre" target="_blank" rel="noopener noreferrer" class="linkedin-btn" aria-label="Lionel Fèvre on LinkedIn">linkedin.com/in/lionelfevre</a>
+                        </div>
+                    </div>
 
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">📍</span>
+                        <div>
+                            <span class="contact-label">Location</span><br>
+                            <span class="contact-value">Maranello, Italy</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">🌍</span>
+                        <div>
+                            <span class="contact-label">Languages</span><br>
+                            <span class="contact-value">French (native) · English (bilingual) · Italian (fluent)</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">🛂</span>
+                        <div>
+                            <span class="contact-label">Citizenship and work authorisation</span><br>
+                            <span class="contact-value">French and Canadian citizen · EU: full right to work · US: TN-1 eligible · UK: employer sponsorship required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal panels -->
+        <section class="legal-panel section-anchor" id="terms" aria-labelledby="terms-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="terms-heading">Terms &amp; Conditions</h2>
+                </div>
+                <div class="legal-text">Terms and Conditions
+
+These Terms and Conditions (“Legal Terms”) govern your use of this professional web portfolio, which comprises the public display of my work and professional profile. By accessing or using this website, you agree to be bound by these Legal Terms. If you do not agree, you must not use the Services.
+
+1. OUR SERVICES
+
+The Services comprise the public presentation of my professional portfolio. The information provided through the Services is intended for lawful use only and must not be distributed or used in any jurisdiction where such distribution or use would be contrary to applicable law. Users accessing the Services from outside Italy are responsible for compliance with their local laws.
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+All content in the portfolio, including text, images and designs, is protected by copyright, trademark and other applicable laws. You may view the content solely for personal, non-commercial purposes, such as evaluating my professional qualifications. Reproduction, republication, distribution or commercial use of any content without prior written consent is strictly prohibited.
+
+3. YOUR USE OF THE SERVICES
+
+Subject to these Legal Terms, you are granted a non-exclusive, non-transferable, revocable licence to access the Services for legitimate professional purposes only. Any other use, including for marketing, data mining or redistribution, is forbidden.
+
+4. PROHIBITED ACTIVITIES
+
+You may not use the Services for:
+- Any illegal or unauthorised purpose;
+- Republishing or redistributing the portfolio content without permission;
+- Using the portfolio content for unsolicited marketing, job scams or identity theft;
+- Copying, altering or exploiting the Services for commercial gain without written consent;
+- Harassment, abuse or harmful conduct toward me or other users.
+
+5. SERVICES MANAGEMENT
+
+I reserve the right to monitor, update, restrict or remove access to the Services to protect my rights and ensure proper functioning.
+
+6. TERM AND TERMINATION
+
+These Legal Terms remain in effect while you use the Services. I may terminate or restrict your access at any time, without notice, for any violation of these Legal Terms.
+
+7. MODIFICATIONS AND INTERRUPTIONS
+
+I may update, modify or suspend the Services at any time without notice. I am not liable for any interruptions or unavailability of the Services.
+
+8. GOVERNING LAW
+
+These Legal Terms are governed by the laws of Italy. The courts located in Italy shall have exclusive jurisdiction over any disputes arising from these Legal Terms.
+
+9. DISCLAIMER
+
+The Services are provided on an 'as-is' basis without warranties of any kind. I am not liable for errors, inaccuracies, interruptions or misuse of the Services.
+
+10. LIMITATIONS OF LIABILITY
+
+To the fullest extent permitted by law, I shall not be liable for any damages, direct or indirect, arising from your use of the Services.
+
+11. INDEMNIFICATION
+
+You agree to indemnify and hold me harmless from any claims, damages or losses arising from your use of the Services, your breach of these Legal Terms, or misuse of the portfolio content.
+
+12. MISCELLANEOUS
+
+These Legal Terms represent the entire agreement between you and me regarding the Services. If any provision is found invalid, the remaining provisions shall remain in effect.
+
+13. CONTACT
+
+For any enquiry related to the Services, including legitimate professional opportunities, please reach me through the LinkedIn profile linked on this site.</div>
+                <button type="button" class="legal-close" data-close-legal="terms">Close</button>
+            </div>
+        </section>
+
+        <section class="legal-panel section-anchor" id="disclaimer" aria-labelledby="disclaimer-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="disclaimer-heading">Disclaimer</h2>
+                </div>
+                <div class="legal-text">WEBSITE DISCLAIMER
+
+The information provided on fevreconcept.com (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site. UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SITE OR RELIANCE ON ANY INFORMATION PROVIDED ON THE SITE. YOUR USE OF THE SITE AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.
+
+EXTERNAL LINKS DISCLAIMER
+
+The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties. Such external links are not investigated, monitored or checked for accuracy, adequacy, validity, reliability, availability or completeness by us. WE DO NOT WARRANT, ENDORSE, GUARANTEE OR ASSUME RESPONSIBILITY FOR THE ACCURACY OR RELIABILITY OF ANY INFORMATION OFFERED BY THIRD-PARTY WEBSITES LINKED THROUGH THE SITE.</div>
+                <button type="button" class="legal-close" data-close-legal="disclaimer">Close</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        © Lionel Fèvre 2026
+        <span class="footer-links">|
+            <a href="#terms" data-legal="terms">Terms &amp; Conditions</a> |
+            <a href="#disclaimer" data-legal="disclaimer">Disclaimer</a>
+        </span> |
+        <small>Employer names are used for factual employment history only. All product names, logos and brands are property of their respective owners. Use of these names, logos and brands does not imply endorsement.</small>
+    </footer>
 
     <script>
-        // Global variables for CAPTCHA
-        let captchaAnswer = 8;
+        document.addEventListener('DOMContentLoaded', function () {
+            var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('nav-menu');
 
-        // Generate random CAPTCHA
-        function generateCaptcha() {
-            const num1 = Math.floor(Math.random() * 20) + 1;
-            const num2 = Math.floor(Math.random() * 20) + 1;
-            const operations = ['+'];
-            const operation = operations[Math.floor(Math.random() * operations.length)];
-            
-            let answer;
-            switch(operation) {
-                case '+':
-                    answer = num1 + num2;
-                    break;
-                case '-':
-                    answer = num1 - num2;
-                    break;
-                case '*':
-                    answer = num1 * num2;
-                    break;
-            }
-            
-            document.getElementById('captcha-question').textContent = `What is ${num1} ${operation} ${num2}?`;
-            captchaAnswer = answer;
-            document.getElementById('captcha-answer').value = '';
-        }
-
-        // Enhanced navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-
-            // Initialize CAPTCHA
-            generateCaptcha();
-
-            // Handle headshot image loading
-            const profileImages = document.querySelectorAll('.profile-image');
-            profileImages.forEach(img => {
-                // Create a test image to check if the headshot exists
-                const testImg = new Image();
-                testImg.onload = function() {
-                    // If image loads successfully, remove fallback class
+            // Headshot: drop the fallback styling only if the image actually loads
+            var profileImages = document.querySelectorAll('.profile-image');
+            profileImages.forEach(function (img) {
+                var testImg = new Image();
+                testImg.onload = function () {
                     img.classList.remove('fallback');
-                };
-                testImg.onerror = function() {
-                    // If image fails to load, keep fallback styling
-                    console.log('Headshot image not found, using initials fallback');
                 };
                 testImg.src = 'resources/headshot.png';
             });
 
-            // Page navigation with enhanced animations
-            function showPage(targetPage) {
-                pages.forEach(page => {
-                    page.classList.remove('active');
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-
-                const targetPageElement = document.getElementById(targetPage);
-                if (targetPageElement) {
-                    targetPageElement.classList.add('active');
-                }
-
-                const activeLink = document.querySelector(`[data-page="${targetPage}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-
-                // Close mobile menu
+            function closeMenu() {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
-
-                // Enhanced animations on page load
-                setTimeout(() => {
-                    const fadeElements = targetPageElement.querySelectorAll('.fade-in');
-                    const slideLeftElements = targetPageElement.querySelectorAll('.slide-in-left');
-                    const slideRightElements = targetPageElement.querySelectorAll('.slide-in-right');
-                    
-                    fadeElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 150);
-                    });
-                    
-                    slideLeftElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 200);
-                    });
-                    
-                    slideRightElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 200 + 100);
-                    });
-                }, 100);
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Open menu');
             }
 
-            // Navigation event listeners
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetPage = this.getAttribute('data-page');
-                    showPage(targetPage);
-                });
-            });
-
-            // CTA button navigation
-            document.addEventListener('click', function(e) {
-                if (e.target.hasAttribute('data-page')) {
-                    e.preventDefault();
-                    const targetPage = e.target.getAttribute('data-page');
-                    showPage(targetPage);
-                }
-            });
-
-            // Mobile menu toggle
-            hamburger.addEventListener('click', function(e) {
+            hamburger.addEventListener('click', function (e) {
                 e.stopPropagation();
-                navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
+                var open = navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active', open);
+                hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
             });
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(e) {
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('click', function (e) {
                 if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
+                    closeMenu();
                 }
             });
 
-            // Contact form handling with enhanced validation
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
-                // Enhanced validation
-                if (!data.name || !data.email || !data.subject || !data.message) {
-                    alert('Please fill in all required fields marked with *');
-                    return;
-                }
-                
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(data.email)) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-                
-                if (data.message.length < 20) {
-                    alert('Please provide a more detailed message (minimum 20 characters).');
-                    return;
-                }
-               
-				var formData2 = {
-					name: document.getElementById("name").value,
-					email: document.getElementById("email").value,
-					subject: document.getElementById("subject").value,
-					company: document.getElementById("company").value,
-					position: document.getElementById("position").value,
-					message: document.getElementById("message").value
-				  };
-	  
-				const submitBtn = this.querySelector('.submit-btn');
-				const originalText = submitBtn.textContent;
-				submitBtn.innerHTML = '<span class="loading-spinner">Sending Message... <div class="spinner"></div></span>';
-				submitBtn.disabled = true;
-
-				//emailjs.sendForm("service_gqb47o8", "template_836ufc5", formData2)
-				emailjs.send('service_gqb47o8', 'template_836ufc5', formData2, 'LfvEo67bECaiOqb4W')
-					.then(function() {
-						alert(`Thank you ${data.name}! Your message has been sent successfully.`);
-						document.getElementById('contactForm').reset();
-						submitBtn.textContent = originalText;
-						submitBtn.disabled = false;
-					}, function(error) {
-						console.error("EmailJS error:", error);
-						alert('Oops! Something went wrong. Please try again later.');
-						submitBtn.textContent = originalText;
-						submitBtn.disabled = false;
-					});
-	
-            });
-			
-
-            // Email reveal functionality
-            const revealEmailBtn = document.getElementById('reveal-email-btn');
-            const emailAddress = document.getElementById('email-address');
-            
-            if (revealEmailBtn && emailAddress) {
-                revealEmailBtn.addEventListener('click', function() {
-                    this.style.display = 'none';
-                    emailAddress.style.display = 'inline';
-                    emailAddress.innerHTML = '<a href="mailto:contact@fevreconcept.com" style="color: var(--electric-blue); text-decoration: none;">contact@fevreconcept.com</a>';
-                });
-            }
-
-            // CV Download functionality with CAPTCHA
-            window.requestCvDownload = function() {
-                document.getElementById('cv-modal').style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                //generateCaptcha(); // Generate new CAPTCHA each time
-            };
-
-            window.hideCvForm = function() {
-                document.getElementById('cv-modal').style.display = 'none';
-                document.body.style.overflow = 'auto';
-                document.getElementById('cvForm').reset();				
-            };
-
-            // CV form submission with CAPTCHA validation (FIXED)
-            const cvForm = document.getElementById('cvForm');
-            
-
-            // Close modals when clicking outside or pressing Escape
-            document.addEventListener('click', function(e) {
-                const cvModal = document.getElementById('cv-modal');
-                
-                if (e.target === cvModal) {
-                    hideCvForm();
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
-                    hideCvForm();
+                    closeMenu();
                 }
             });
 
-            // Enhanced scroll effects for navbar
-            let lastScrollY = window.scrollY;
-            window.addEventListener('scroll', () => {
-                const navbar = document.querySelector('.navbar');
+            // Navbar opacity on scroll
+            window.addEventListener('scroll', function () {
+                var navbar = document.querySelector('.navbar');
                 if (window.scrollY > 100) {
                     navbar.style.background = 'rgba(26, 26, 26, 0.98)';
                     navbar.style.backdropFilter = 'blur(15px)';
@@ -1962,375 +1860,65 @@
                     navbar.style.background = 'rgba(26, 26, 26, 0.95)';
                     navbar.style.backdropFilter = 'blur(10px)';
                 }
-                lastScrollY = window.scrollY;
             });
 
-            // Enhanced intersection observer for animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+            // Reveal animations
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-            // Observe all animation elements
-            const animationElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-            animationElements.forEach(el => observer.observe(el));
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right')
+                .forEach(function (el) { observer.observe(el); });
 
-            // Initialize home page animations
-            setTimeout(() => {
-                const homeAnimations = document.querySelectorAll('#home .fade-in');
-                homeAnimations.forEach((el, index) => {
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, index * 300);
-                });
-            }, 500);
+            // Active nav item follows the section in view
+            var sections = navLinks
+                .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+                .filter(Boolean);
 
-            // Enhanced skill tag interactions
-            const skillTags = document.querySelectorAll('.skill-tag');
-            skillTags.forEach(tag => {
-                tag.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-2px) scale(1.05)';
-                });
-                
-                tag.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Timeline hover effects
-            const timelineItems = document.querySelectorAll('.timeline-item .timeline-content');
-            timelineItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.02)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-
-            // Keyboard navigation support
-            document.addEventListener('keydown', function(e) {
-                if (e.altKey) {
-                    const currentActive = document.querySelector('.nav-link.active');
-                    const currentIndex = Array.from(navLinks).indexOf(currentActive);
-                    
-                    if (e.key === 'ArrowRight' && currentIndex < navLinks.length - 1) {
-                        e.preventDefault();
-                        navLinks[currentIndex + 1].click();
-                    } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-                        e.preventDefault();
-                        navLinks[currentIndex - 1].click();
-                    }
-                }
-            });
-
-            // Dynamic stats counter animation
-            const statNumbers = document.querySelectorAll('.stat-number');
-            const animateCounters = () => {
-                statNumbers.forEach(stat => {
-                    const target = stat.textContent;
-                    const isNumber = !isNaN(target.replace('+', ''));
-                    
-                    if (isNumber) {
-                        const finalNumber = parseInt(target.replace('+', ''));
-                        let current = 0;
-                        const increment = finalNumber / 50;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= finalNumber) {
-                                stat.textContent = target;
-                                clearInterval(timer);
-                            } else {
-                                stat.textContent = Math.floor(current) + (target.includes('+') ? '+' : '');
-                            }
-                        }, 30);
-                    }
-                });
-            };
-
-            // Trigger counter animation when stats section becomes visible
-            const statsSection = document.querySelector('.key-stats');
-            if (statsSection) {
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            animateCounters();
-                            statsObserver.unobserve(entry.target);
-                        }
+            var spy = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    navLinks.forEach(function (link) {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
                     });
-                }, { threshold: 0.5 });
-                
-                statsObserver.observe(statsSection);
-            }
-
-            // Enhanced form field animations
-            const formInputs = document.querySelectorAll('input, textarea, select');
-            formInputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    this.style.transform = 'scale(1.02)';
-                    this.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.4)';
                 });
-                
-                input.addEventListener('blur', function() {
-                    this.style.transform = 'scale(1)';
-                    this.style.boxShadow = 'none';
+            }, { rootMargin: '-45% 0px -50% 0px' });
+
+            sections.forEach(function (section) { spy.observe(section); });
+
+            // Legal panels
+            document.querySelectorAll('[data-legal]').forEach(function (trigger) {
+                trigger.addEventListener('click', function () {
+                    var panel = document.getElementById(trigger.getAttribute('data-legal'));
+                    if (panel) {
+                        panel.classList.add('open');
+                    }
                 });
             });
 
-            // Add subtle parallax effect to hero section
-            window.addEventListener('scroll', () => {
-                const heroSection = document.querySelector('.hero');
-                if (heroSection && window.innerWidth > 768) {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * -0.5;
-                    heroSection.style.transform = `translateY(${rate}px)`;
+            document.querySelectorAll('[data-close-legal]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var panel = document.getElementById(btn.getAttribute('data-close-legal'));
+                    if (panel) {
+                        panel.classList.remove('open');
+                    }
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                });
+            });
+
+            // Open a legal panel if the page is loaded with its hash
+            if (window.location.hash === '#terms' || window.location.hash === '#disclaimer') {
+                var initial = document.querySelector(window.location.hash);
+                if (initial) {
+                    initial.classList.add('open');
+                    initial.scrollIntoView();
                 }
-            });
-
-            // Professional typing effect for hero title
-            const heroTitle = document.querySelector('.hero-title');
-            if (heroTitle) {
-                const originalText = heroTitle.textContent;
-                heroTitle.textContent = '';
-                
-                setTimeout(() => {
-                    let i = 0;
-                    const typeWriter = () => {
-                        if (i < originalText.length) {
-                            heroTitle.textContent += originalText.charAt(i);
-                            i++;
-                            setTimeout(typeWriter, 100);
-                        }
-                    };
-                    typeWriter();
-                }, 1000);
             }
         });
-
-        // CAPTCHA utility functions
-        window.generateCaptcha = generateCaptcha;
     </script>
-
-<div id="terms" class="page">
-    <section class="container" style="padding: 100px 20px;">
-        <div class="section-header">
-            <h2>Terms & Conditions</h2>
-        </div>
-        <div style="color: var(--text-gray); line-height: 1.8; white-space: pre-wrap;">
-Terms and Conditions
-
-These Terms and Conditions (“Legal Terms”) govern your use of our professional web portfolio, which includes the public display of my work, professional profile, and the option to download my resume or curriculum vitae (CV). By accessing or using this website, you agree to be bound by these Legal Terms. If you do not agree, you must not use the Services.
-
-1. OUR SERVICES
-
-The Services include the public presentation of my professional portfolio and the ability for users to download my CV. The information provided through the Services is intended for lawful use only and must not be distributed or used in any jurisdiction where such distribution or use would be contrary to applicable law. Users accessing the Services from outside Italy are responsible for compliance with their local laws.
-
-2. INTELLECTUAL PROPERTY RIGHTS
-
-All content in the portfolio, including text, images, designs, logos, and the CV, are protected by copyright, trademark, and other applicable laws. You may view and download the CV solely for personal, non-commercial purposes, such as evaluating my professional qualifications. Reproduction, republication, distribution, or commercial use of any content, including the CV, without prior written consent is strictly prohibited.
-
-3. YOUR USE OF THE SERVICES
-
-Subject to these Legal Terms, you are granted a non-exclusive, non-transferable, revocable license to access the Services and download a copy of the CV for legitimate professional purposes only. Any other use, including for marketing, data mining, or redistribution, is forbidden.
-
-4. PROHIBITED ACTIVITIES
-
-You may not use the Services for: 
-- Any illegal or unauthorized purpose;
-- Republishing or redistributing the CV or portfolio content without permission;
-- Using the CV or portfolio content for unsolicited marketing, job scams, or identity theft;
-- Copying, altering, or exploiting the Services for commercial gain without written consent;
-- Harassment, abuse, or harmful conduct toward me or other users.
-
-5. USER SUBMISSIONS
-
-If you send inquiries, comments, or professional opportunities through the contact form or email, you confirm that such submissions are lawful, non-confidential, and do not infringe on third-party rights. You grant me the right to respond and store such submissions as needed for professional purposes.
-
-6. PRIVACY AND DATA HANDLING
-
-Any personal contact details included in the CV must not be collected, stored, or used without legitimate interest and prior consent. Misuse of personal information from the CV or portfolio is strictly prohibited.
-
-7. SERVICES MANAGEMENT
-
-I reserve the right to monitor, update, restrict, or remove access to the Services to protect my rights and ensure proper functioning.
-
-8. TERM AND TERMINATION
-
-These Legal Terms remain in effect while you use the Services. I may terminate or restrict your access at any time, without notice, for any violation of these Legal Terms.
-
-9. MODIFICATIONS AND INTERRUPTIONS
-
-I may update, modify, or suspend the Services at any time without notice. I am not liable for any interruptions or unavailability of the Services.
-
-10. GOVERNING LAW
-
-These Legal Terms are governed by the laws of Italy. The courts located in Italy shall have exclusive jurisdiction over any disputes arising from these Legal Terms.
-
-11. DISCLAIMER
-
-The Services are provided on an 'as-is' basis without warranties of any kind. I am not liable for errors, inaccuracies, interruptions, or misuse of the Services.
-
-12. LIMITATIONS OF LIABILITY
-
-To the fullest extent permitted by law, I shall not be liable for any damages, direct or indirect, arising from your use of the Services. In any case, my liability shall not exceed any amount you have paid to access the Services, if applicable.
-
-13. INDEMNIFICATION
-
-You agree to indemnify and hold me harmless from any claims, damages, or losses arising from your use of the Services, your breach of these Legal Terms, or misuse of the CV or portfolio content.
-
-14. ELECTRONIC COMMUNICATIONS
-
-By using the Services, you consent to receive communications electronically and agree that such communications satisfy legal requirements for written communication.
-
-15. MISCELLANEOUS
-
-These Legal Terms represent the entire agreement between you and me regarding the Services. If any provision is found invalid, the remaining provisions shall remain in effect.
-
-16. CONTACT
-
-For any inquiries related to the Services, including legitimate professional opportunities, please send me a message using the contact form provided.   
-        </div>
-			</section> 
-			<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-				© Lionel Fevre 2025 | 
-				<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-				<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a> | 
-				<small>All product names, logos, and brands are property of their respective owners. Use of these names, logos, and brands does not imply endorsement.</small>
-		</footer>
-		</div>
-
-<div id="disclaimer" class="page">
-    <section class="container" style="padding: 100px 20px;">
-        <div class="section-header">
-            <h2>Disclaimer</h2>
-        </div>
-        <div style="color: var(--text-gray); line-height: 1.8; white-space: pre-wrap;">
-WEBSITE DISCLAIMER
-
-The information we provided on fevreconcept.com (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site. UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SITE OR RELIANCE ON ANY INFORMATION PROVIDED ON THE SITE. YOUR USE OF THE SITE AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.
-
-EXTERNAL LINKS DISCLAIMER
-
-The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by us. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR THE ACCURACY OR RELIABILITY OF ANY INFORMATION OFFERED BY THIRD-PARTY WEBSITES LINKED THROUGH THE SITE OR ANY WEBSITE OR FEATURE LINKED IN ANY BANNER OR OTHER ADVERTISING. WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.
-        </div>
-    </section>
-	<footer class="site-footer" style="text-align:center; padding: 20px; color: var(--text-gray); border-top: 1px solid var(--carbon-light); margin-top: 40px;">
-		© Lionel Fevre 2025 | 
-		<a href="#" data-page="terms" style="color: var(--electric-blue);">Terms & Conditions</a> | 
-			<a href="#" data-page="disclaimer" style="color: var(--electric-blue);">Disclaimer</a> | 
-			<small>All product names, logos, and brands are property of their respective owners. Use of these names, logos, and brands does not imply endorsement.</small>
-	</footer>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-(function(){
-    emailjs.init('LfvEo67bECaiOqb4W'); // Replace with your EmailJS public key
-})();
-
-document.addEventListener("DOMContentLoaded", function() {
-    var captchaQuestion = document.getElementById("captcha-question");
-    var captchaInput = document.getElementById("captcha-input");
-    var captchaError = document.getElementById("captcha-error");
-    var cvForm = document.getElementById("cvForm");
-    var cvDownloadBtn = document.getElementById("cvDownloadBtn");
-    var captchaAnswer;
-
-    function generateCaptcha() {
-        var num1 = Math.floor(Math.random() * 10) + 1;
-        var num2 = Math.floor(Math.random() * 10) + 1;
-        captchaAnswer = num1 + num2;
-        captchaQuestion.textContent = num1 + " + " + num2 + " = ?";
-    }
-
-    generateCaptcha();
-
-    
-    });
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init('LfvEo67bECaiOqb4W'); // Replace with your EmailJS public key
-  }
-  var captchaQuestion = document.getElementById("captcha-question");
-  var captchaInput = document.getElementById("captcha-answer");
-  var cvForm = document.getElementById("cvForm");
-  var captchaAnswer;
-
-  function generateCaptcha() {
-    var num1 = Math.floor(Math.random() * 10) + 1;
-    var num2 = Math.floor(Math.random() * 10) + 1;
-    captchaAnswer = num1 + num2;
-    if (captchaQuestion) {
-      captchaQuestion.textContent = num1 + " + " + num2 + " = ?";
-    }
-  }
-  generateCaptcha();
-
-  if (cvForm) {
-    cvForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      var captchaValue = parseInt(captchaInput.value, 10);
-      if (isNaN(captchaValue) || captchaValue !== captchaAnswer) {
-        alert("Security verification failed. Please try again.");
-        generateCaptcha();
-        captchaInput.value = "";
-        return;
-      }
-
-      var formData = {
-        name: document.getElementById("cv-name").value,
-        email: document.getElementById("cv-email").value,
-        company: document.getElementById("cv-company").value
-      };
-
-      var submitBtn = cvForm.querySelector(".submit-btn");
-      var originalText = submitBtn.textContent;
-      submitBtn.innerHTML = '<span class="loading-spinner">Verifying... <div class="spinner"></div></span>';
-      submitBtn.disabled = true;
-
-      // Send EmailJS
-      if (typeof emailjs !== 'undefined') {
-        emailjs.send('service_c5tnuwa', 'template_rti57vr', formData, 'LfvEo67bECaiOqb4W')
-        .then(function() {
-        alert("An email has just been sent with the link to download my CV.");
-          resetForm();
-        }, function(error) {
-          console.error("EmailJS failed", error);
-          alert("An error occurred while sending your request.");
-          resetForm();
-        });
-      } else {
-        resetForm();
-      }
-
-      function resetForm() {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        if (typeof hideCvForm === 'function') {
-          hideCvForm();
-        }
-        cvForm.reset();
-        generateCaptcha();
-      }
-    });
-  }
-});
-</script>
-
 </body>
 </html>
